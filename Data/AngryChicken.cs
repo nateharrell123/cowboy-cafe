@@ -18,61 +18,63 @@ namespace CowboyCafe.Data
                 return 5.99;
             }
         }
-    }
 
-    /// <summary>
-    /// The calories of the Cowpoke Chili Entree.
-    /// </summary>
-    public uint Calories
-    {
-        get
-        {
-            return 190;
-        }
-    }
 
-    /// <summary>
-    /// If bread is being served with the Cowpoke Chili.
-    /// </summary>
-    public bool Bread
-    {
-        get
+        /// <summary>
+        /// The calories of the Cowpoke Chili Entree.
+        /// </summary>
+        public uint Calories
         {
-            return bread;
-        }
-        set
-        {
-            bread = value;
-        }
-    }
+            get
+            {
+                return 190;
+            }
 
-    /// <summary>
-    /// If the Cowpoke Chili has pickle.
-    /// </summary>
-    public bool Pickle
-    {
-        get
-        {
-            return pickle;
         }
-        set
+
+        /// <summary>
+        /// If bread is being served with the Cowpoke Chili.
+        /// </summary>
+        public bool Bread
         {
-            pickle = value;
+            get
+            {
+                return bread;
+            }
+            set
+            {
+                bread = value;
+            }
         }
-    }
 
-    /// <summary>
-    /// Special instructions for the Angry Chicken entree.
-    /// </summary>
-    public List<string> SpecialInstructions
-    {
-        get
+        /// <summary>
+        /// If the Cowpoke Chili has pickle.
+        /// </summary>
+        public bool Pickle
         {
-            var instructions = new List<string>();
-            if (!pickle) instructions.Add("hold pickle");
-            if (!bread) instructions.Add("hold bread");
+            get
+            {
+                return pickle;
+            }
+            set
+            {
+                pickle = value;
+            }
+        }
 
-            return instructions;
+        /// <summary>
+        /// Special instructions for the Angry Chicken entree.
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+                if (!pickle) instructions.Add("hold pickle");
+                if (!bread) instructions.Add("hold bread");
+
+                return instructions;
+            }
         }
     }
 }

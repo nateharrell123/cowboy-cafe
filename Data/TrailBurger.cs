@@ -7,12 +7,13 @@ namespace CowboyCafe.Data
     /// <summary>
     /// The class that represents the Trailburger entree.
     /// </summary>
-    public class Trailbuger
+    public class TrailBurger
     {
         private bool ketchup = true;
         private bool mustard = true;
         private bool pickle = true;
         private bool cheese = true;
+        private bool bun = true;
         /// <summary>
         /// The price of the Trailburger entree.
         /// </summary>
@@ -75,6 +76,12 @@ namespace CowboyCafe.Data
             set { cheese = value; }
         }
 
+        public bool Bun
+        {
+            get { return bun; }
+            set { bun = value; }
+        }
+
         /// <summary>
         /// Any special instructions for the Trailburger entree.
         /// </summary>
@@ -88,6 +95,7 @@ namespace CowboyCafe.Data
                 if (!mustard) instructions.Add("hold mustard");
                 if (!pickle) instructions.Add("hold pickle");
                 if (!cheese) instructions.Add("hold cheese");
+                if (!bun) instructions.Add("hold bun");
 
                 return instructions;
             }

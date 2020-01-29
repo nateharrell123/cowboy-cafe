@@ -14,13 +14,14 @@ namespace CowboyCafe.Data
         private bool pickle = true;
         private bool cheese = true;
 
+        private bool bun = true;
         private bool tomato = true;
         private bool lettuce = true;
         private bool mayo = true;
         /// <summary>
         /// The cost for a Dakota Double Burger entree.
         /// </summary>
-        public double Cost
+        public double Price
         {
             get
             {
@@ -105,6 +106,11 @@ namespace CowboyCafe.Data
             set { mayo = value; }
         }
 
+        public bool Bun
+        {
+            get { return bun; }
+            set { bun = value; }
+        }
         /// <summary>
         /// Any special instructions for the Trailburger entree.
         /// </summary>
@@ -121,6 +127,7 @@ namespace CowboyCafe.Data
                 if (!tomato) instructions.Add("hold tomato");
                 if (!lettuce) instructions.Add("hold lettuce");
                 if (!mayo) instructions.Add("hold mayo");
+                if (!bun) instructions.Add("hold bun");
 
                 return instructions;
             }

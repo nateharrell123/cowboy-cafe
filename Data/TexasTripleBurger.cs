@@ -13,7 +13,7 @@ namespace CowboyCafe.Data
         private bool mustard = true;
         private bool pickle = true;
         private bool cheese = true;
-
+        private bool bun = true;
         private bool tomato = true;
         private bool lettuce = true;
         private bool mayo = true;
@@ -23,12 +23,18 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The cost for a Texas Triple Burger entree.
         /// </summary>
-        public double Cost
+        public double Price
         {
             get
             {
                 return 6.45;
             }
+        }
+
+        public bool Bun
+        {
+            get { return bun; }
+            set { bun = value; }
         }
         /// <summary>
         /// The calories for the Texas Triple Burger entree.
@@ -144,6 +150,7 @@ namespace CowboyCafe.Data
                 if (!mayo) instructions.Add("hold mayo");
                 if (!bacon) instructions.Add("hold bacon");
                 if (!egg) instructions.Add("hold egg");
+                if (!bun) instructions.Add("hold bun");
 
                 return instructions;
             }
