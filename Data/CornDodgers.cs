@@ -5,25 +5,25 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class representing the Chili Cheese Fries Side.
+    /// Class representing the corn dodgers side item.
     /// </summary>
-    public class ChiliCheeseFries : Side
+    public class CornDodgers : Side
     {
         /// <summary>
-        /// Calories for the Chili Cheese Fries Side item.
+        /// The price for the Corn Dodgers side item.
         /// </summary>
-        public override uint Calories
+        public override double Price
         {
             get
             {
-                switch(Size)
+                switch (Size)
                 {
-                    case Size.Large:
-                        return 610;
-                    case Size.Medium:
-                        return 524;
                     case Size.Small:
-                        return 433;
+                        return 1.59;
+                    case Size.Medium:
+                        return 1.79;
+                    case Size.Large:
+                        return 1.99;
                     default:
                         throw new NotImplementedException("Unknown size");
                 }
@@ -31,22 +31,22 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Price for the Chili Cheese Fries Side item.
+        /// The calories for the Corn Dodgers side item.
         /// </summary>
-        public override double Price
+        public override uint Calories
         {
             get
             {
                 switch(Size)
                 {
                     case Size.Small:
-                        return 1.99;
+                        return 512;
                     case Size.Medium:
-                        return 2.99;
+                        return 685;
                     case Size.Large:
-                        return 3.99;
+                        return 717;
                     default:
-                        throw new NotImplementedException("Unknown price");
+                        throw new NotImplementedException("Unknown size");
                 }
             }
         }
