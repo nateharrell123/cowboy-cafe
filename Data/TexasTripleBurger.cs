@@ -7,7 +7,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Texas Triple Burger entree.
     /// </summary>
-    public class TexasTripleBurger
+    public class TexasTripleBurger : EntreeBaseClass
     {
         private bool ketchup = true;
         private bool mustard = true;
@@ -23,7 +23,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The cost for a Texas Triple Burger entree.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -39,7 +39,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories for the Texas Triple Burger entree.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -135,7 +135,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Any special instructions for the Trailburger entree.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
