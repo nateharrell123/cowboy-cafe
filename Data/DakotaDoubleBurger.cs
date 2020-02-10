@@ -7,7 +7,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class representing the Dakota Double Burger entree.
     /// </summary>
-    public class DakotaDoubleBurger:EntreeBaseClass
+    public class DakotaDoubleBurger:Entree
     {
         private bool ketchup = true;
         private bool mustard = true;

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nate Harrell
+* Class: ChiliCheeseFries.cs
+* Purpose: To represent the Chili Cheese Fries side item
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nate Harrell
+* Class: RustlersRibs.cs
+* Purpose: To represent the Rustler's Ribs entree.
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +12,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Rustler's Ribs Entree.
     /// </summary>
-    public class RustlersRibs:EntreeBaseClass
+    public class RustlersRibs:Entree
     {
         public override double Price
         {

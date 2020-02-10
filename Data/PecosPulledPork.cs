@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nate Harrell
+* Class: PecosPulledPork.cs
+* Purpose: To represent the Pecos Pulled Pork entree.
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +12,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Pecos Pulled Pork entree.
     /// </summary>
-    public class PecosPulledPork:EntreeBaseClass
+    public class PecosPulledPork:Entree
     {
         private bool bread = true;
         private bool pickle = true;

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nate Harrell
+* Class: TexasTripleBurger.cs
+* Purpose: To represent the Texas Triple Burger entree.
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +12,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Texas Triple Burger entree.
     /// </summary>
-    public class TexasTripleBurger : EntreeBaseClass
+    public class TexasTripleBurger : Entree
     {
         private bool ketchup = true;
         private bool mustard = true;

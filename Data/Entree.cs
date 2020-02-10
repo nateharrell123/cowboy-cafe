@@ -1,10 +1,15 @@
-﻿using System;
+﻿/*
+* Author: Nate Harrell
+* Class: EntreeBaseClass.cs
+* Purpose: To serve as a base class that other classes can implement.
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public abstract class EntreeBaseClass
+    public abstract class Entree
     {
         public abstract double Price { get; }
         public abstract uint Calories { get; }

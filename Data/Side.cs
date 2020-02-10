@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nate Harrell
+* Class: Side.cs
+* Purpose: To serve as a base class for other side items to implement.
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

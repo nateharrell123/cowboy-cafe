@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nate Harrell
+* Class: TrailBurger.cs
+* Purpose: To represent the Trail Burger entree item.
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +12,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// The class that represents the Trailburger entree.
     /// </summary>
-    public class TrailBurger:EntreeBaseClass
+    public class TrailBurger:Entree
     {
         private bool ketchup = true;
         private bool mustard = true;

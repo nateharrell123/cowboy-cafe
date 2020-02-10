@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nate Harrell
+* Class: CornDodgers.cs
+* Purpose: To represent the Corn Dodgers side entree.
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

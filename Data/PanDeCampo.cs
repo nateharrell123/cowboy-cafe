@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nate Harrell
+* Class: PanDeCampo.cs
+* Purpose: To serve as the Pan de Campo side item.
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
