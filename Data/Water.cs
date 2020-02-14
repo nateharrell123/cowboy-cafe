@@ -14,7 +14,23 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price for water.
         /// </summary>
-        public override double Price { get { return 0; } }
+        public override double Price
+        {
+            get
+            {
+                switch(Size)
+                {
+                    case (Size.Small):
+                        return 0.12;
+                    case (Size.Medium):
+                        return 0.12;
+                    case (Size.Large):
+                        return 0.12;
+                    default:
+                        throw new NotImplementedException("Unknown size.");
+                }
+            }
+        }
         
         /// <summary>
         /// The calories for water.

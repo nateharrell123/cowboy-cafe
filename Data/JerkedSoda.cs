@@ -62,7 +62,7 @@ namespace CowboyCafe.Data
             get
             {
                 var instructions = new List<string>();
-                if (!Ice) instructions.Add("Hold ice.");
+                if (!Ice) instructions.Add("Hold Ice");
 
                 return instructions;
             }

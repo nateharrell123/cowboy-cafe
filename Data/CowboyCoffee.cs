@@ -33,6 +33,8 @@ namespace CowboyCafe.Data
             }
         }
 
+        public bool Decaf { get; set; } = false;
+
         /// <summary>
         /// The calories for the Cowboy Coffee beverage.
         /// </summary>
@@ -63,7 +65,7 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (Ice) instructions.Add("Add ice");
+                if (Ice) instructions.Add("Add Ice");
                 if (RoomForCream) instructions.Add("Room for Cream");
 
                 return instructions;

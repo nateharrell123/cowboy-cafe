@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If lemon is to be served with the tea (true by default).
         /// </summary>
-        public bool Lemon { get; set; } = true;
+        public bool Lemon { get; set; } = false;
 
         /// <summary>
         /// Price of the Texas Tea beverage.
@@ -30,7 +30,7 @@ namespace CowboyCafe.Data
                 switch(Size)
                 {
                     case (Size.Small):
-                        return 1.10;
+                        return 1.00;
                     case (Size.Medium):
                         return 1.50;
                     case (Size.Large):
@@ -47,17 +47,35 @@ namespace CowboyCafe.Data
         {
             get
             {
-                switch(Size)
+                if(Sweet)
                 {
-                    case (Size.Small):
-                        return 10;
-                    case (Size.Medium):
-                        return 22;
-                    case (Size.Large):
-                        return 36;
-                    default:
-                        throw new NotImplementedException("Unknown size.");
+                    switch (Size)
+                    {
+                        case (Size.Small):
+                            return 10;
+                        case (Size.Medium):
+                            return 22;
+                        case (Size.Large):
+                            return 36;
+                        default:
+                            throw new NotImplementedException("Unknown size.");
+                    }
                 }
+                else
+                {
+                    switch (Size)
+                    {
+                        case (Size.Small):
+                            return 10 / 2;
+                        case (Size.Medium):
+                            return 22 / 2;
+                        case (Size.Large):
+                            return 36 / 2;
+                        default:
+                            throw new NotImplementedException("Unknown size.");
+                    }
+                }
+            
             }
         }
         /// <summary>
