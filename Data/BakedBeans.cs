@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+* Author: Nate Harrell
+* Class: BakedBeans.cs
+* Purpose: To represent the Baked beans side item
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
