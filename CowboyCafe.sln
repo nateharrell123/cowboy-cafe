@@ -13,6 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{28B9E9D5-D7DD-431A-818C-1B343F15D54E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\CowboyCafe (1) (1).pdf = ..\..\..\Downloads\CowboyCafe (1) (1).pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
