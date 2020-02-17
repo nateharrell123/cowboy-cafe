@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="PointOfSale.OrderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <!-- Changing height value for button-->
+            <Setter Property="Height" Value = "75"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!-- Adding columns to the display-->
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+            
+        <StackPanel> <!-- Stack Panel aligns buttons in a column-->
+            <TextBlock TextAlignment="Center">Entrees</TextBlock>
+            <!-- Adding a button that auto-sizes to the available space. "AngryChicken" text gets placed-->
+            <Button Height="50"> AngryChicken </Button>
+            <Button>Cowpoke Chili</Button>
+        </StackPanel>
+        
+        <StackPanel Grid.Column ="1">
+            <TextBlock TextAlignment="Center">Side</TextBlock>
+        </StackPanel>
+
+    </Grid>
+    </UserControl>
