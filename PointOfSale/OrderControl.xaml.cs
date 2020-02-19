@@ -22,11 +22,10 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-            CowpokeChili.Click += AddCowPokeChiliButton; 
         }
 
         /// <summary>
-        /// Creates new Cowpoke Chili  
+        /// Creates new Cowpoke Chili object and adds it to the Order List Checked List Box.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -35,11 +34,64 @@ namespace PointOfSale
             OrderList.Items.Add(new CowpokeChili());
         }
 
+        /// <summary>
+        /// Creates new Angry Chicken object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddAngryChickenButton(object sender, EventArgs e)
         {
-            OrderList.Items.Add(new CowpokeChili());
+            OrderList.Items.Add(new AngryChicken());
         }
 
+        /// <summary>
+        /// Creates new Baked Beans object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddBakedBeansButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new BakedBeans());
+        }
 
+        /// <summary>
+        /// Creates new Chili Cheese Fries object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddChiliCheeseFriesButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new ChiliCheeseFries());
+        }
+
+        /// <summary>
+        /// Creates new Corn Dodgers object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddCornDodgersButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new CornDodgers());
+        }
+
+        /// <summary>
+        /// Creates new Pan De Campo object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddPanDeCampoButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new PanDeCampo());
+        }
+
+        /// <summary>
+        /// Creates a new Cowboy Coffee object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddCowBoyCoffeeButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new CowboyCoffee());
+        }
     }
 }

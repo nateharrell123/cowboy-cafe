@@ -24,8 +24,23 @@
         <StackPanel> <!-- Stack Panel aligns buttons in a column-->
             <TextBlock TextAlignment="Center">Entrees</TextBlock>
             <!-- Adding a button that auto-sizes to the available space. "AngryChicken" text gets placed-->
-            <Button x:Name ="AngryChicken" Height="50"> AngryChicken </Button>
-            <Button x:Name ="CowpokeChili" Click="AddCowPokeChiliButton">Cowpoke Chili</Button>
+            <Button x:Name ="AngryChicken" Click= "AddAngryChickenButton"> Angry Chicken </Button>
+            <Button x:Name="CowpokeChili" Click ="AddCowPokeChiliButton">Cowpoke Chili</Button>
+        </StackPanel>
+
+        <!-- Creates a stack panel in column 1-->
+        <StackPanel Grid.Column="1">
+            <TextBlock TextAlignment="Center">Sides</TextBlock>
+            
+            <Button x:Name = "BakedBeans" Click = "AddBakedBeansButton"> Baked Beans</Button>
+            <Button x:Name = "ChiliCheeseFries" Click = "AddChiliCheeseFriesButton">Chili Cheese Fries</Button>
+            <Button x:Name = "CornDodgers" Click = "AddCornDodgersButton">Corn Dodgers</Button>
+            <Button x:Name= "PanDeCampo" Click= "AddPanDeCampoButton">Pan De Campo</Button>
+        </StackPanel>
+        <StackPanel Grid.Column= "2">
+            <TextBlock TextAlignment= "Center">Drinks</TextBlock>
+            <Button x:Name = "CowboyCoffee" Click ="AddCowBoyCoffeeButton">Cowboy Coffee</Button>
+            
         </StackPanel>
         
         <StackPanel Grid.Column ="3">

@@ -81,5 +81,11 @@ namespace CowboyCafe.Data
         /// If there's ice included (false by default).
         /// </summary>
         public bool Ice {get; set;} = false;
+
+        public override string ToString()
+        {
+            
+        }
+
     }
 }
