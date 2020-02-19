@@ -24,12 +24,13 @@
         <StackPanel> <!-- Stack Panel aligns buttons in a column-->
             <TextBlock TextAlignment="Center">Entrees</TextBlock>
             <!-- Adding a button that auto-sizes to the available space. "AngryChicken" text gets placed-->
-            <Button Height="50"> AngryChicken </Button>
-            <Button>Cowpoke Chili</Button>
+            <Button x:Name ="AngryChicken" Height="50"> AngryChicken </Button>
+            <Button x:Name ="CowpokeChili" Click="AddCowPokeChiliButton">Cowpoke Chili</Button>
         </StackPanel>
         
-        <StackPanel Grid.Column ="1">
-            <TextBlock TextAlignment="Center">Side</TextBlock>
+        <StackPanel Grid.Column ="3">
+            <TextBlock TextAlignment="Center">Order List:</TextBlock>
+            <ListBox Name ="OrderList"/>
         </StackPanel>
 
     </Grid>
