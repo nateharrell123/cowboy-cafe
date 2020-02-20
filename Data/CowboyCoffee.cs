@@ -82,10 +82,18 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Ice {get; set;} = false;
 
+        /// <summary>
+        /// Override method to print the name of the beverage based on size, and if it's decaf or not.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-            
+            string status, name;
+            name = "Cowboy Coffee";
+            if (Decaf) status = "Decaf";
+            else status = string.Empty;
+            return $"{Size} {status} {name}";
         }
-
+        
     }
 }
