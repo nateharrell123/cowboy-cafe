@@ -93,5 +93,86 @@ namespace PointOfSale
         {
             OrderList.Items.Add(new CowboyCoffee());
         }
+
+        /// <summary>
+        /// Creates a new Jerked Soda object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddJerkedSodaButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new JerkedSoda());
+        }
+
+        /// <summary>
+        ///  Creates a new Texas Tea object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddTexasTeaButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new TexasTea());
+        }
+        /// <summary>
+        ///  Creates a new Water object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddWaterButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new Water());
+        }
+
+        /// <summary>
+        ///  Creates a new Dakota Double Burger object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddDakotaDoubleBurgerButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new DakotaDoubleBurger());
+        }
+
+        /// <summary>
+        ///  Creates a new Pecos Pulled Pork object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddPecosPulledPorkButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new PecosPulledPork());
+        }
+
+        /// <summary>
+        ///  Creates a new Rustler's Ribs object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddRustlersRibsButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new RustlersRibs());
+        }
+
+        /// <summary>
+        ///  Creates a new Texas Triple Burger object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddTexasTripleBurgerButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new TexasTripleBurger());
+        }
+
+        /// <summary>
+        ///  Creates a new Trail Burger object and adds it to the Order List Checked List Box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddTrailBurgerButton(object sender, EventArgs e)
+        {
+            OrderList.Items.Add(new TrailBurger());
+        }
+
+
     }
 }

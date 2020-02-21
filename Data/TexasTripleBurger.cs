@@ -30,10 +30,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public override double Price
         {
-            get
-            {
-                return 6.45;
-            }
+            get {return 6.45;}
         }
 
         public bool Bun
@@ -46,10 +43,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public override uint Calories
         {
-            get
-            {
-                return 698;
-            }
+            get {return 698;}
         }
 
         /// <summary>
@@ -57,14 +51,8 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Ketchup
         {
-            get
-            {
-                return ketchup;
-            }
-            set
-            {
-                ketchup = value;
-            }
+            get {return ketchup;}
+            set {ketchup = value;}
         }
         /// <summary>
         /// If the Texas Triple Burger entree is to be served with mustard.
@@ -159,6 +147,15 @@ namespace CowboyCafe.Data
 
                 return instructions;
             }
+        }
+
+        /// <summary>
+        /// Overrides the ToString() method and prints the name of the entree.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Texas Triple Burger";
         }
     }
 }

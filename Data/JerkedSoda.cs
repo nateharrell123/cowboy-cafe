@@ -67,5 +67,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Overriding the ToString() method to print the beverage based on size and flavor.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{Size} {Flavor} Jerked Soda";
+        }
     }
 }

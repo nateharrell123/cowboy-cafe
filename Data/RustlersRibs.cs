@@ -16,10 +16,7 @@ namespace CowboyCafe.Data
     {
         public override double Price
         {
-            get
-            {
-                return 7.50;
-            }
+            get {return 7.50;}
         }
 
         /// <summary>
@@ -27,20 +24,24 @@ namespace CowboyCafe.Data
         /// </summary>
         public override uint Calories
         {
-            get
-            {
-                return 894;
-            }
+            get {return 894;}
         }
 
+        /// <summary>
+        /// Any special instructions for the Rustler's Ribs entree.
+        /// </summary>
         public override List<string> SpecialInstructions
         {
-            get
-            {
-                var instructions = new List<string>();
+            get { var instructions = new List<string>(); return instructions;}
+        }
 
-                return instructions;
-            }
+        /// <summary>
+        /// Overrides the ToString() method and prints the name of the entree.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Rustler's Ribs";
         }
     }
 }

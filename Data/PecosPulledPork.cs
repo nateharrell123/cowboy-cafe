@@ -21,10 +21,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public override double Price
         {
-            get
-            {
-                return 5.88;
-            }
+            get{ return 5.88; }
         }
 
         /// <summary>
@@ -32,10 +29,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public override uint Calories
         {
-            get
-            {
-                return 528;
-            }
+            get {return 528;}
         }
 
         /// <summary>
@@ -43,14 +37,8 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Bread
         {
-            get
-            {
-                return bread;
-            }
-            set
-            {
-                bread = value;
-            }
+            get {return bread;}
+            set {bread = value;}
         }
 
         /// <summary>
@@ -58,14 +46,8 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Pickle
         {
-            get
-            {
-                return pickle;
-            }
-            set
-            {
-                pickle = value;
-            }
+            get {return pickle;}
+            set {pickle = value;}
         }
 
         /// <summary>
@@ -82,6 +64,15 @@ namespace CowboyCafe.Data
 
                 return instructions;
             }
+        }
+
+        /// <summary>
+        /// Overrides the ToString() method and prints the name of the entree.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Pecos Pulled Pork";
         }
     }
 }

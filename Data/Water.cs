@@ -57,5 +57,17 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Prints the Beverage based on the size and if it has Lemon or not.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string status;
+            if (Lemon) status = "w/ Lemon";
+            else status = string.Empty;
+            return $"{Size} Water {status}";
+        }
     }
 }

@@ -132,5 +132,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Overrides the tostring() method and prints the name of the entree.
+        /// </summary>
+        /// <returns>"Dakota Double Burger"</returns>
+        public override string ToString()
+        {
+            return "Dakota Double Burger";
+        }
     }
 }

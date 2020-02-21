@@ -24,10 +24,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public override double Price
         {
-            get
-            {
-                return 4.50;
-            }
+            get {return 4.50;}
         }
 
         /// <summary>
@@ -35,10 +32,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public override uint Calories
         {
-            get
-            {
-                return 288;
-            }
+            get {return 288;}
         }
 
         /// <summary>
@@ -46,14 +40,8 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Ketchup
         {
-            get
-            {
-                return ketchup;
-            }
-            set
-            {
-                ketchup = value;
-            }
+            get {return ketchup;}
+            set {ketchup = value;}
         }
         /// <summary>
         /// If the entree is to be served with mustard.
@@ -104,6 +92,15 @@ namespace CowboyCafe.Data
 
                 return instructions;
             }
+        }
+
+        /// <summary>
+        /// Overrides the ToString() method and prints the name of the entree.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Trail Burger";
         }
     }
 }
