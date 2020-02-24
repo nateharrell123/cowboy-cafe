@@ -88,10 +88,15 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            string status;
-            if (Decaf) status = "Decaf";
-            else status = string.Empty;
-            return $"{Size} {status} Cowboy Coffee";
+           switch(Decaf)
+            {
+                case true:
+                    return Size + " Decaf Cowboy Coffee";
+                case false:
+                    return Size + " Cowboy Coffee";
+                default:
+                    throw new NotImplementedException();
+            }
         }   
     }
 }

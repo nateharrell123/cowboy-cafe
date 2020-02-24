@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If lemon is to be served with the tea (true by default).
         /// </summary>
-        public bool Lemon { get; set; } = true;
+        public bool Lemon { get; set; } = false;
 
         /// <summary>
         /// Price of the Texas Tea beverage.
@@ -99,8 +99,9 @@ namespace CowboyCafe.Data
             // Size Drink with lemon
             string status;
             if (Lemon) status = "w/ Lemon";
-            else status = string.Empty;
-            return $"{Size} Texas Tea {status}";
+            else if (Sweet) status = "Sweet";
+            else status = "Plain";
+            return $"{Size} Texas {status} Tea";
         }
     }
 }

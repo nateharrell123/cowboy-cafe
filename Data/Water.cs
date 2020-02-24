@@ -65,9 +65,9 @@ namespace CowboyCafe.Data
         public override string ToString()
         {
             string status;
-            if (Lemon) status = "w/ Lemon";
+            if (Lemon) status = " w/ Lemon";
             else status = string.Empty;
-            return $"{Size} Water {status}";
+            return $"{Size} Water{status}";
         }
     }
 }
