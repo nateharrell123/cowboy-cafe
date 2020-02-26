@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class Order:INotifyPropertyChanged
+    public class Order:INotifyPropertyChanged, IOrderItem
     {
         public event PropertyChangedEventHandler PropertyChanged; // if any of these properties have changed, notify us. Subtotal Items, 
         public double Subtotal { get; }
@@ -19,6 +19,10 @@ namespace CowboyCafe.Data
         private int lastOrderNumber;
 
         public uint OrderNumber { get; }
+
+        public double Price => throw new NotImplementedException();
+
+        public List<string> SpecialInstructions => throw new NotImplementedException();
 
         private List<IOrderItem> items = new List<IOrderItem>();
 
