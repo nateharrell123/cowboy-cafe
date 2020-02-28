@@ -5,27 +5,31 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class Order:INotifyPropertyChanged, IOrderItem
+    public class Order:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged; // if any of these properties have changed, notify us. Subtotal Items, 
         public double Subtotal { get; }
 
-        public IEnumerable<IOrderItem> Items { get; }
+        public IEnumerable<IOrderItem> Items
+        {
+            get
+            {
+                return items.ToArray();
+            }
+        }
 
         public void Add(IOrderItem item) { }
 
         public void Remove(IOrderItem item) { }
 
-        private int lastOrderNumber;
+        private static int lastOrderNumber;
 
         public uint OrderNumber { get; }
 
-        public double Price => throw new NotImplementedException();
+        public double Price { get; }
 
-        public List<string> SpecialInstructions => throw new NotImplementedException();
 
         private List<IOrderItem> items = new List<IOrderItem>();
-
         
     }
 }

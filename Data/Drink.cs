@@ -9,7 +9,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public abstract class Drink
+    public abstract class Drink:IOrderItem
     {
         public Size Size { get; set; } = Size.Small;
 

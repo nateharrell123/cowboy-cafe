@@ -56,6 +56,8 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override List<string> SpecialInstructions => throw new NotImplementedException();
+
         public override string ToString()
         {
             return Size.ToString() + " Pan de Campo";

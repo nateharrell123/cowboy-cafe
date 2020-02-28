@@ -89,14 +89,14 @@ namespace CowboyCafe.Data
         public override string ToString()
         {
            switch(Decaf)
-            {
+           {
                 case true:
                     return Size + " Decaf Cowboy Coffee";
                 case false:
                     return Size + " Cowboy Coffee";
                 default:
                     throw new NotImplementedException();
-            }
+           }
         }   
     }
 }

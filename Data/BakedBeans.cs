@@ -57,6 +57,8 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override List<string> SpecialInstructions => throw new NotImplementedException();
+
         /// <summary>
         /// Overrides the ToString() method.
         /// </summary>
