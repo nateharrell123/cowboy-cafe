@@ -8,7 +8,7 @@ namespace CowboyCafe.Data
     public class Order:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged; // if any of these properties have changed, notify us. Subtotal Items, 
-        public double Subtotal { get; }
+        public double Subtotal { get; set; }
 
         public IEnumerable<IOrderItem> Items
         {
@@ -18,7 +18,12 @@ namespace CowboyCafe.Data
             }
         }
 
-        public void Add(IOrderItem item) { }
+        public void Add(IOrderItem item)
+        {
+            Subtotal += item.Price;
+            items.Add(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("PropertyChanged"));
+        }
 
         public void Remove(IOrderItem item) { }
 

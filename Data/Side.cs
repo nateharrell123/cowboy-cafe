@@ -28,6 +28,6 @@ namespace CowboyCafe.Data
         /// Gets the calories of the entree
         /// </summary>
         public abstract uint Calories { get; }
-        public abstract List<string> SpecialInstructions { get; }
+        public List<string> SpecialInstructions => throw new NotImplementedException();
     }
 }
