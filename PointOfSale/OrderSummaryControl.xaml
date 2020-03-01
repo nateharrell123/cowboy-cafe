@@ -5,8 +5,46 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="525" d:DesignWidth="265">
+    <!--Modifies the List Box Items-->
+    <UserControl.Resources>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <!-- Defining rows-->
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="460"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+         <!-- Saying the text for this textbox will be whatever the OrderNumber property is.-->
+        <TextBlock Grid.Row="0" Text="{Binding Path=OrderNumber, StringFormat={} Order {0}}"/>
+
+        <!--The name of this will be whatever the 'Items' property is.-->
+        <StackPanel Grid.Row="1">
+            <ListBox Name ="OrderListBox" ItemsSource="{Binding Path=Items}" Height="460">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding}"/>
+                            <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Price, StringFormat=c}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock>Subtotal:</TextBlock>
+            <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}"/>
+        </StackPanel>
     </Grid>
 </UserControl>
