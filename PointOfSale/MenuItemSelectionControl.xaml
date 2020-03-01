@@ -6,7 +6,48 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <!-- Changing height value for button-->
+            <Setter Property="Height" Value = "50"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
-            
+        <!--Columns-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Buttons for Entrees-->
+        <StackPanel>
+            <TextBlock TextAlignment="Center">Entrees</TextBlock>
+            <Button x:Name = "AngryChicken" Click = "AddAngryChickenButton">Angry Chicken</Button>
+            <Button x:Name = "CowpokeChili" Click = "AddCowPokeChiliButton">Cowpoke Chili</Button>
+            <Button x:Name = "DakotaDoubleBurger" Click = "AddDakotaDoubleBurgerButton">Dakota Double Burger</Button>
+            <Button x:Name = "PecosPulledPork" Click = "AddPecosPulledPorkButton">Pecos Pulled Pork</Button>
+            <Button x:Name = "RustlersRibs" Click = "AddRustlersRibsButton">Rustler's Ribs</Button>
+            <Button x:Name = "TexasTripleBurger" Click = "AddTexasTripleBurgerButton">Texas Triple Burger</Button>
+            <Button x:Name = "TrailBurger" Click = "AddTrailBurgerButton">Trail Burger</Button>
+        </StackPanel>
+
+        <!-- Buttons for Sides-->
+        <StackPanel Grid.Column="1">
+            <TextBlock TextAlignment="Center">Sides</TextBlock>
+            <Button x:Name = "BakedBeans" Click = "AddBakedBeansButton">Baked Beans</Button>
+            <Button x:Name = "ChiliCheeseFries" Click = "AddChiliCheeseFriesButton">Chili Cheese Fries</Button>
+            <Button x:Name = "CornDodgers" Click = "AddCornDodgersButton">Corn Dodgers</Button>
+            <Button x:Name= "PanDeCampo" Click= "AddPanDeCampoButton">Pan De Campo</Button>
+        </StackPanel>
+
+        <!-- Buttons for Drinks-->
+        <StackPanel Grid.Column= "2">
+            <TextBlock TextAlignment= "Center">Drinks</TextBlock>
+            <Button x:Name = "CowboyCoffee" Click ="AddCowBoyCoffeeButton">Cowboy Coffee</Button>
+            <Button x:Name = "JerkedSoda" Click = "AddJerkedSodaButton">Jerked Soda</Button>
+            <Button x:Name ="TexasTea" Click = "AddTexasTeaButton">Texas Tea</Button>
+            <Button x:Name ="Water" Click ="AddWaterButton">Water</Button>
+        </StackPanel>
     </Grid>
 </UserControl>
