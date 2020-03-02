@@ -45,7 +45,7 @@ namespace CowboyCafe.DataTests
         {
             var order = new Order();
 
-            var item0= new MockOrderItem();
+            var item0 = new MockOrderItem();
             var item1 = new MockOrderItem();
             var item2 = new MockOrderItem();
 

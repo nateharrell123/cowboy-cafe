@@ -5,11 +5,17 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Represents an order.
+    /// </summary>
     public class Order:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged; // if any of these properties have changed, notify us. Subtotal Items, 
-        private List<IOrderItem> items = new List<IOrderItem>();
+        private List<IOrderItem> items = new List<IOrderItem>(); // ?
         private double subtotal;
+        /// <summary>
+        /// Gets the subtotal based on IOrderItems in the 'Items' IEnumerable
+        /// </summary>
         public double Subtotal
         {
             get
@@ -23,6 +29,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Returns an array of IOrderItems.
+        /// </summary>
         public IEnumerable<IOrderItem> Items
         {
             get
@@ -32,7 +41,10 @@ namespace CowboyCafe.Data
         }
 
         
-
+        /// <summary>
+        /// Adds an IOrderItem to the 'items' list in this class. Also updates that the 'PropertyChanged' property has changed.
+        /// </summary>
+        /// <param name="item"></param>
         public void Add(IOrderItem item)
         {
             items.Add(item);
@@ -40,6 +52,10 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 
+        /// <summary>
+        /// Removes an IOrderItem from the 'items' list. Also updates that the 'PropertyChanged' property has changed.
+        /// </summary>
+        /// <param name="item"></param>
         public void Remove(IOrderItem item)
         {
             items.Remove(item);

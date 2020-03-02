@@ -95,8 +95,7 @@ namespace CowboyCafe.Data
         }
 
         public override string ToString()
-        {
-            // Size Drink with lemon
+        { 
             string status;
             if (Lemon) status = "w/ Lemon";
             else if (Sweet) status = "Sweet";
