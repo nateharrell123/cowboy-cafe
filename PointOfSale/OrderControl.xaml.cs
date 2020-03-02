@@ -28,7 +28,7 @@ namespace PointOfSale
 
         private void ItemSelectionButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            // not implemented yet
         }
 
         private void CancelOrderButtonClicked(object sender, RoutedEventArgs e)
