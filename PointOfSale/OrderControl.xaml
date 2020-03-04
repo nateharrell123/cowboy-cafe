@@ -22,7 +22,11 @@
         <Button x:Name="CancelOrderButton" Click="CancelOrderButtonClicked" Grid.Column="1">Cancel Order</Button>
         <Button x:Name="CompleteOrder" Click="CompleteOrderButtonClicked" Grid.Column="2">Complete Order</Button>
 
-        <local:MenuItemSelectionControl Grid.Row="1" Grid.ColumnSpan="3" Margin="0,10,-195,66"/>
+
+        <Border Name="Container" Grid.Row="1">
+            <local:MenuItemSelectionControl Grid.Row="1" Grid.ColumnSpan="3" Margin="0,10,-195,66"/>
+        </Border>
+        
         <local:OrderSummaryControl Grid.Column="2" Margin="350,57,-440,13" Grid.RowSpan="2"/>
     </Grid>
 </UserControl>

@@ -24,7 +24,7 @@
         <StackPanel>
             <TextBlock TextAlignment="Center">Entrees</TextBlock>
             <Button x:Name = "AngryChicken" Click = "AddAngryChickenButton">Angry Chicken</Button>
-            <Button x:Name = "CowpokeChili" Click = "AddCowPokeChiliButton">Cowpoke Chili</Button>
+            <Button x:Name = "CowpokeChili" Click = "AddCowPokeChiliButton" Tag="CowpokeChili">Cowpoke Chili</Button>
             <Button x:Name = "DakotaDoubleBurger" Click = "AddDakotaDoubleBurgerButton">Dakota Double Burger</Button>
             <Button x:Name = "PecosPulledPork" Click = "AddPecosPulledPorkButton">Pecos Pulled Pork</Button>
             <Button x:Name = "RustlersRibs" Click = "AddRustlersRibsButton">Rustler's Ribs</Button>

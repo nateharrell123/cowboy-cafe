@@ -28,7 +28,7 @@ namespace PointOfSale
 
         private void ItemSelectionButtonClicked(object sender, RoutedEventArgs e)
         {
-            // not implemented yet
+            Container.Child = new MenuItemSelectionControl();
         }
 
         private void CancelOrderButtonClicked(object sender, RoutedEventArgs e)
@@ -39,6 +39,11 @@ namespace PointOfSale
         private void CompleteOrderButtonClicked(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+        }
+
+        public void SwapScreen(FrameworkElement element) // Framework element is a base class for all UI elements
+        {
+            Container.Child = element; 
         }
 
     }

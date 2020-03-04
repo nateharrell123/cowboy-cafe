@@ -56,8 +56,6 @@ namespace CowboyCafe.Data
             }
         }
 
-        public List<string> SpecialInstructions => throw new NotImplementedException();
-
         public override string ToString()
         {
             return Size.ToString() + " Corn Dodgers";
