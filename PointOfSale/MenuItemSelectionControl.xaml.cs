@@ -99,9 +99,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddChiliCheeseFriesButton(object sender, EventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new ChiliCheeseFries());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "ChiliCheeseFries":
+                            var item = new ChiliCheeseFries();
+                            var screen = new ChiliCheeseFriesCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
 
@@ -189,9 +202,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddDakotaDoubleBurgerButton(object sender, EventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new DakotaDoubleBurger());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "DakotaDoubleBurger":
+                            var item = new DakotaDoubleBurger();
+                            var screen = new DakotaDoubleBurgerCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
 

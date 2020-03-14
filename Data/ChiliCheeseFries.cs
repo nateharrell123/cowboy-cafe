@@ -6,13 +6,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class representing the Chili Cheese Fries Side.
     /// </summary>
-    public class ChiliCheeseFries : Side
+    public class ChiliCheeseFries : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// Calories for the Chili Cheese Fries Side item.
@@ -55,8 +56,45 @@ namespace CowboyCafe.Data
                 }
             }
         }
+        private bool cheese = true;
 
-        public List<string> SpecialInstructions = new List<string>();
+        public bool Cheese
+        {
+            get { return cheese; }
+            set 
+            {
+                cheese = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        private bool chili = true;
+        public bool Chili
+        {
+            get { return chili; }
+            set
+            {
+                chili = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Chili"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        public override List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+
+                if (!cheese) instructions.Add("hold cheese");
+                if (!chili) instructions.Add("hold chili");
+
+                return instructions;
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public override string ToString()
         {

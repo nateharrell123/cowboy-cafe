@@ -35,10 +35,10 @@
         <!-- Buttons for Sides-->
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center">Sides</TextBlock>
-            <Button x:Name = "BakedBeans" Click = "AddBakedBeansButton">Baked Beans</Button>
-            <Button x:Name = "ChiliCheeseFries" Click = "AddChiliCheeseFriesButton">Chili Cheese Fries</Button>
-            <Button x:Name = "CornDodgers" Click = "AddCornDodgersButton">Corn Dodgers</Button>
-            <Button x:Name= "PanDeCampo" Click= "AddPanDeCampoButton">Pan De Campo</Button>
+            <Button x:Name = "BakedBeans" Click = "AddBakedBeansButton" Tag="BakedBeans">Baked Beans</Button>
+            <Button x:Name = "ChiliCheeseFries" Click = "AddChiliCheeseFriesButton" Tag="ChiliCheeseFries">Chili Cheese Fries</Button>
+            <Button x:Name = "CornDodgers" Click = "AddCornDodgersButton" Tag="CornDodgers">Corn Dodgers</Button>
+            <Button x:Name= "PanDeCampo" Click= "AddPanDeCampoButton" Tag="PanDeCampo">Pan De Campo</Button>
         </StackPanel>
 
         <!-- Buttons for Drinks-->
