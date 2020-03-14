@@ -60,9 +60,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddAngryChickenButton(object sender, EventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new AngryChicken());
+                if(sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "AngryChicken":
+                            var item = new AngryChicken();
+                            var screen = new AngryChickenCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
 

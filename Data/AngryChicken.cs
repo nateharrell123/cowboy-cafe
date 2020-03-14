@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the Cowpoke Chili.
+    /// A class representing the Angry Chicken.
     /// </summary>
-    public class AngryChicken : Entree
+    public class AngryChicken : Entree, INotifyPropertyChanged 
     {
         private bool bread = true;
         private bool pickle = true;
@@ -21,7 +22,7 @@ namespace CowboyCafe.Data
 
 
         /// <summary>
-        /// The calories of the Cowpoke Chili Entree.
+        /// The calories of the Angry Chicken Entree.
         /// </summary>
         public override uint Calories
         {
@@ -33,7 +34,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// If bread is being served with the Cowpoke Chili.
+        /// If bread is being served with the Angry Chicken.
         /// </summary>
         public bool Bread
         {
@@ -44,11 +45,13 @@ namespace CowboyCafe.Data
             set
             {
                 bread = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
         /// <summary>
-        /// If the Cowpoke Chili has pickle.
+        /// If the Angry Chicken has pickle.
         /// </summary>
         public bool Pickle
         {
@@ -59,6 +62,8 @@ namespace CowboyCafe.Data
             set
             {
                 pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
@@ -76,6 +81,8 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public override string ToString()
         {

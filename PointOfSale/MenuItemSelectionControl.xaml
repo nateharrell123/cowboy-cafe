@@ -23,13 +23,13 @@
         <!-- Buttons for Entrees-->
         <StackPanel>
             <TextBlock TextAlignment="Center">Entrees</TextBlock>
-            <Button x:Name = "AngryChicken" Click = "AddAngryChickenButton">Angry Chicken</Button>
+            <Button x:Name = "AngryChicken" Click = "AddAngryChickenButton" Tag="AngryChicken">Angry Chicken</Button>
             <Button x:Name = "CowpokeChili" Click = "AddCowPokeChiliButton" Tag="CowpokeChili">Cowpoke Chili</Button>
-            <Button x:Name = "DakotaDoubleBurger" Click = "AddDakotaDoubleBurgerButton">Dakota Double Burger</Button>
-            <Button x:Name = "PecosPulledPork" Click = "AddPecosPulledPorkButton">Pecos Pulled Pork</Button>
-            <Button x:Name = "RustlersRibs" Click = "AddRustlersRibsButton">Rustler's Ribs</Button>
-            <Button x:Name = "TexasTripleBurger" Click = "AddTexasTripleBurgerButton">Texas Triple Burger</Button>
-            <Button x:Name = "TrailBurger" Click = "AddTrailBurgerButton">Trail Burger</Button>
+            <Button x:Name = "DakotaDoubleBurger" Click = "AddDakotaDoubleBurgerButton" Tag="DakotaDoubleBurger">Dakota Double Burger</Button>
+            <Button x:Name = "PecosPulledPork" Click = "AddPecosPulledPorkButton" Tag="PecosPulledPork">Pecos Pulled Pork</Button>
+            <Button x:Name = "RustlersRibs" Click = "AddRustlersRibsButton" Tag="RustlersRibs">Rustler's Ribs</Button>
+            <Button x:Name = "TexasTripleBurger" Click = "AddTexasTripleBurgerButton" Tag="TexasTripleBurger">Texas Triple Burger</Button>
+            <Button x:Name = "TrailBurger" Click = "AddTrailBurgerButton" Tag="TrailBurger">Trail Burger</Button>
         </StackPanel>
 
         <!-- Buttons for Sides-->
