@@ -6,13 +6,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing the Pecos Pulled Pork entree.
     /// </summary>
-    public class PecosPulledPork:Entree
+    public class PecosPulledPork:Entree, INotifyPropertyChanged
     {
         private bool bread = true;
         private bool pickle = true;
@@ -21,7 +22,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public override double Price
         {
-            get{ return 5.88; }
+            get {return 5.88;}
         }
 
         /// <summary>
@@ -38,7 +39,12 @@ namespace CowboyCafe.Data
         public bool Bread
         {
             get {return bread;}
-            set {bread = value;}
+            set
+            {
+                bread = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         /// <summary>
@@ -47,7 +53,12 @@ namespace CowboyCafe.Data
         public bool Pickle
         {
             get {return pickle;}
-            set {pickle = value;}
+            set
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                pickle = value;
+            }
         }
 
         /// <summary>
@@ -65,6 +76,8 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Overrides the ToString() method and prints the name of the entree.

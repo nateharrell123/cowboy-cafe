@@ -228,9 +228,23 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddPecosPulledPorkButton(object sender, EventArgs e)
         {
-            if (DataContext is Order order)
+            var orderControl = this.FindAncestor<OrderControl>();
+            
+            if(DataContext is Order order)
             {
-                order.Add(new PecosPulledPork());
+                if(sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "PecosPulledPork":
+                            var item = new PecosPulledPork();
+                            var screen = new PecosPulledPorkCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
 
@@ -254,9 +268,23 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddTexasTripleBurgerButton(object sender, EventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new TexasTripleBurger());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "TexasTripleBurger":
+                            var item = new TexasTripleBurger();
+                            var screen = new TexasTripleBurgerCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
+
             }
         }
 

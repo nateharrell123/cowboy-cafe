@@ -28,7 +28,7 @@
         <Border Name="Container" Grid.Row="1" Grid.Column="1">
             <local:MenuItemSelectionControl Grid.Row="1"/>
         </Border>
-        
-        <local:OrderSummaryControl Grid.Column="0" Grid.RowSpan="2" Margin="0,35,0,-65"/>
+
+        <local:OrderSummaryControl Grid.Column="0" Grid.RowSpan="3" Margin="0,56,0,5"/>
     </Grid>
 </UserControl>
