@@ -295,9 +295,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddTrailBurgerButton(object sender, EventArgs e)
         {
-            if (DataContext is Order order)
+            var orderControl = this.FindAncestor<OrderControl>();
+            if(DataContext is Order order)
             {
-                order.Add(new TrailBurger());
+                if(sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "TrailBurger":
+                            var item = new TrailBurger();
+                            var screen = new TrailBurgerCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
     }
