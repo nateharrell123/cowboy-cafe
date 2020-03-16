@@ -29,6 +29,6 @@
             <local:MenuItemSelectionControl Grid.Row="1"/>
         </Border>
 
-        <local:OrderSummaryControl Grid.Column="0" Grid.RowSpan="3" Margin="0,56,0,5"/>
+        <local:OrderSummaryControl Grid.Column="0" Grid.RowSpan="3" Margin="0,61,0,5"/>
     </Grid>
 </UserControl>

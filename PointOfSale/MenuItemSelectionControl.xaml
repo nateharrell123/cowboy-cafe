@@ -10,6 +10,7 @@
         <Style TargetType="Button">
             <!-- Changing height value for button-->
             <Setter Property="Height" Value = "50"/>
+            <Setter Property="Margin" Value ="5"/>
         </Style>
     </UserControl.Resources>
     <Grid>
@@ -38,7 +39,7 @@
             <Button x:Name = "BakedBeans" Click = "AddBakedBeansButton" Tag="BakedBeans">Baked Beans</Button>
             <Button x:Name = "ChiliCheeseFries" Click = "AddChiliCheeseFriesButton" Tag="ChiliCheeseFries">Chili Cheese Fries</Button>
             <Button x:Name = "CornDodgers" Click = "AddCornDodgersButton" Tag="CornDodgers">Corn Dodgers</Button>
-            <Button x:Name= "PanDeCampo" Click= "AddPanDeCampoButton" Tag="PanDeCampo">Pan De Campo</Button>
+            <Button x:Name = "PanDeCampo" Click= "AddPanDeCampoButton" Tag="PanDeCampo">Pan De Campo</Button>
         </StackPanel>
 
         <!-- Buttons for Drinks-->
