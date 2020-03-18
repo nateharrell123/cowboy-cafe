@@ -1,20 +1,30 @@
-﻿<UserControl x:Class="PointOfSale.CustomizationScreens.JerkedSodaCustomization"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <ObjectDataProvider MethodName="GetFlavor"
-                            ObjectType="{x:Type sys:Enum}"
-                            x:Key="Flavors">
+﻿<Window
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+  xmlns:enums="clr-namespace:CowboyCafe.Data;assembly=CowboyCafe.Data"  
+  SizeToContent="WidthAndHeight" 
+  Title="Jerked Soda Flavor Selection">
+
+    <Window.Resources>
+        <ObjectDataProvider MethodName="GetValues"
+                        ObjectType="{x:Type sys:Enum}"
+                        x:Key="SodaFlavor">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="CowboyCafe.Data:Enum"/>
+                <x:Type Type="enums:SodaFlavor"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+    </Window.Resources>
 
-    </UserControl.Resources>
-</UserControl>
+    <Border Margin="10"
+          BorderThickness="0" Padding="8">
+        <StackPanel Width="300">
+            <TextBlock>Choose the flavor of the Soda:</TextBlock>
+            <ListBox Name="myComboBox" SelectedIndex="0" Margin="8"
+               ItemsSource="{Binding Source={StaticResource SodaFlavor}}"/>
+            <Button Content="Click Me!"
+              HorizontalAlignment="{Binding ElementName=myComboBox,
+                                            Path=SelectedItem}"/>
+        </StackPanel>
+    </Border>
+</Window>

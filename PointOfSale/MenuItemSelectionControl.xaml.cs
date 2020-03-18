@@ -164,9 +164,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddJerkedSodaButton(object sender, EventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new JerkedSoda());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "ChiliCheeseFries":
+                            var item = new JerkedSoda();
+                            var screen = new JerkedSodaCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
 
