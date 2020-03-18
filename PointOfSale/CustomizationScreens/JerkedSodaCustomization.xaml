@@ -22,7 +22,7 @@
             <TextBlock>Choose the flavor of the Soda:</TextBlock>
             <ListBox Name="myComboBox" SelectedIndex="0" Margin="8"
                ItemsSource="{Binding Source={StaticResource SodaFlavor}}"/>
-            <Button Content="Click Me!"
+            <Button Content="Change Flavor"
               HorizontalAlignment="{Binding ElementName=myComboBox,
                                             Path=SelectedItem}"/>
         </StackPanel>
