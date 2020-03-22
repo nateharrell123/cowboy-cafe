@@ -171,7 +171,7 @@ namespace PointOfSale
                 {
                     switch (button.Tag)
                     {
-                        case "ChiliCheeseFries":
+                        case "JerkedSoda":
                             var item = new JerkedSoda();
                             var screen = new JerkedSodaCustomization();
                             screen.DataContext = item;
