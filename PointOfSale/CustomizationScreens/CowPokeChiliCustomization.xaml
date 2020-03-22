@@ -9,10 +9,8 @@
     <StackPanel>
         <TextBlock FontSize="20">Customize this Chili!</TextBlock>
         <StackPanel Orientation="Vertical">
-            <CheckBox IsChecked="{Binding Path=Cheese}"/>
-            <TextBlock Text="Cheese"/>
-            <CheckBox IsChecked="{Binding Path=SourCream}"/>
-            <TextBlock Text="Sour Cream"/>
+            <CheckBox IsChecked="{Binding Path=Cheese}" Content="Cheese"/>
+            <CheckBox IsChecked="{Binding Path=SourCream}" Content="Sour Cream"/>
         </StackPanel>
     </StackPanel>
 </UserControl>

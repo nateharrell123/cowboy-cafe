@@ -7,9 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="Choose Flavor" FontSize="26" TextAlignment="Center"/>
         <StackPanel Orientation="Vertical">
+            <TextBlock Text="Choose Flavor" FontSize="26" TextAlignment="Center"/>
             <CheckBox x:Name="Sarsparilla" Content="Sarsparilla"/>
+            <CheckBox x:Name="CreamSoda" Content="Cream Soda"/>
+            <CheckBox x:Name="OrangeSoda" Content="Orange Soda"/>
+            <CheckBox x:Name="BirchBeer" Content="Birch Beer"/>
+            <CheckBox x:Name="RootBeer" Content="Root Beer"/>
         </StackPanel>
     </Grid>
 </UserControl>

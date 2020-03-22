@@ -10,10 +10,8 @@
         <StackPanel>
             <TextBlock FontSize="20">Customize these Chili Cheese Fries!</TextBlock>
             <StackPanel Orientation="Vertical">
-                <CheckBox IsChecked="{Binding Path=Chili}"/>
-                <TextBlock Text="Chili"/>
-                <CheckBox IsChecked="{Binding Path=Cheese}"/>
-                <TextBlock Text="Cheese"/>
+                <CheckBox IsChecked="{Binding Path=Chili}" Content="Chili"/>
+                <CheckBox IsChecked="{Binding Path=Cheese}" Content="Cheese"/>
             </StackPanel>
         </StackPanel>
     </Grid>

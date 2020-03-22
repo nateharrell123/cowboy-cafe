@@ -55,9 +55,9 @@ namespace CowboyCafe.Data
             get {return pickle;}
             set
             {
+                pickle = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                pickle = value;
             }
         }
 

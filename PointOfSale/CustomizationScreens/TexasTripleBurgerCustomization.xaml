@@ -8,28 +8,18 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
-            <TextBlock FontSize="20">Customize this Texas Triple Burger!</TextBlock>
+            <TextBlock FontSize="20" TextAlignment="Center">Customize this Texas Triple Burger!</TextBlock>
             <StackPanel Orientation="Vertical"/>
-            <CheckBox IsChecked="{Binding Path=Ketchup}"/>
-            <TextBlock Text="Ketchup"/>
-            <CheckBox IsChecked="{Binding Path=Mustard}"/>
-            <TextBlock Text="Mustard"/>
-            <CheckBox IsChecked="{Binding Path=Pickle}"/>
-            <TextBlock Text="Pickle"/>
-            <CheckBox IsChecked="{Binding Path=Cheese}"/>
-            <TextBlock Text="Cheese"/>
-            <CheckBox IsChecked="{Binding Path=Bun}"/>
-            <TextBlock Text="Bun"/>
-            <CheckBox IsChecked="{Binding Path=Tomato}"/>
-            <TextBlock Text="Tomato"/>
-            <CheckBox IsChecked="{Binding Path=Lettuce}"/>
-            <TextBlock Text="Lettuce"/>
-            <CheckBox IsChecked="{Binding Path=Mayo}"/>
-            <TextBlock Text="Mayo"/>
-            <CheckBox IsChecked="{Binding Path=Bacon}"/>
-            <TextBlock Text="Bacon"/>
-            <CheckBox IsChecked="{Binding Path=Egg}"/>
-            <TextBlock Text="Egg"/>
+            <CheckBox IsChecked="{Binding Path=Ketchup}" Content="Ketchup"/>
+            <CheckBox IsChecked="{Binding Path=Mustard}" Content="Mustard"/>
+            <CheckBox IsChecked="{Binding Path=Pickle}" Content="Pickle"/>
+            <CheckBox IsChecked="{Binding Path=Cheese}" Content="Cheese"/>
+            <CheckBox IsChecked="{Binding Path=Bun}" Content="Bun"/>
+            <CheckBox IsChecked="{Binding Path=Tomato}" Content="Tomato"/>
+            <CheckBox IsChecked="{Binding Path=Lettuce}" Content="Lettuce"/>
+            <CheckBox IsChecked="{Binding Path=Mayo}" Content="Mayo"/>
+            <CheckBox IsChecked="{Binding Path=Bacon}" Content="Bacon"/>
+            <CheckBox IsChecked="{Binding Path=Egg}" Content="Egg"/>
         </StackPanel>
     </Grid>
 </UserControl>

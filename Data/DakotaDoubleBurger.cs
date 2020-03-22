@@ -51,9 +51,9 @@ namespace CowboyCafe.Data
             }
             set
             {
+                ketchup = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                ketchup = value;
             }
         }
         /// <summary>
@@ -64,9 +64,9 @@ namespace CowboyCafe.Data
             get { return mustard; }
             set
             {
+                mustard = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                mustard = value; 
             }
         }
         /// <summary>
@@ -77,9 +77,9 @@ namespace CowboyCafe.Data
             get { return pickle; }
             set
             {
+                pickle = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                pickle = value; 
             }
         }
 
@@ -91,9 +91,9 @@ namespace CowboyCafe.Data
             get { return cheese; }
             set
             {
+                cheese = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                cheese = value;
             }
         }
 
@@ -105,9 +105,9 @@ namespace CowboyCafe.Data
             get { return tomato; }
             set 
             {
+                tomato = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                tomato = value; 
             }
         }
 
@@ -119,9 +119,9 @@ namespace CowboyCafe.Data
             get { return lettuce; }
             set 
             {
+                lettuce = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                lettuce = value; 
             }
         }
 
@@ -131,11 +131,11 @@ namespace CowboyCafe.Data
         public bool Mayo
         {
             get { return mayo; }
-            set 
+            set
             {
+                mayo = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                mayo = value;
             }
         }
 
@@ -144,9 +144,9 @@ namespace CowboyCafe.Data
             get { return bun; }
             set 
             {
+                bun = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                bun = value; 
             }
         }
         /// <summary>

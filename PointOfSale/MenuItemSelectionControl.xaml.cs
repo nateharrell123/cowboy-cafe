@@ -175,7 +175,7 @@ namespace PointOfSale
                             var item = new JerkedSoda();
                             var screen = new JerkedSodaCustomization();
                             screen.DataContext = item;
-                            order.Add(item);
+                            order.Add(item); // TODO: This needs to change flavors!
                             orderControl?.SwapScreen(screen);
                             break;
                     }
