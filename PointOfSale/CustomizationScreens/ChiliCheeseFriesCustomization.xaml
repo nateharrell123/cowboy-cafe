@@ -13,6 +13,12 @@
                 <CheckBox IsChecked="{Binding Path=Chili}" Content="Chili"/>
                 <CheckBox IsChecked="{Binding Path=Cheese}" Content="Cheese"/>
             </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Size" FontSize="18"/>
+                <RadioButton x:Name="SmallButton" Content="Small"/>
+                <RadioButton x:Name="MediumButton" Content="Medium"/>
+                <RadioButton x:Name="LargeButton" Content="Large"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>

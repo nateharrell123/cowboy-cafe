@@ -6,19 +6,43 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class TexasTea : Drink
+    public class TexasTea : Drink, INotifyPropertyChanged
     {
+        private bool sweet;
+        private bool lemon;
         /// <summary>
         /// If it's sweet tea (true by default).
         /// </summary>
-        public bool Sweet { get; set; } = true;
+        public bool Sweet
+        {
+            get
+            {
+                return true;
+            }
+            set
+            {
+                sweet = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sweet"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
         /// If lemon is to be served with the tea (true by default).
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get { return false; }
+            set
+            {
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// Price of the Texas Tea beverage.
@@ -75,7 +99,6 @@ namespace CowboyCafe.Data
                             throw new NotImplementedException("Unknown size.");
                     }
                 }
-            
             }
         }
         /// <summary>
@@ -93,6 +116,8 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public override string ToString()
         { 

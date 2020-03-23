@@ -11,7 +11,7 @@ namespace CowboyCafe.Data
     public class Order:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged; // if any of these properties have changed, notify us. Subtotal Items, 
-        private List<IOrderItem> items = new List<IOrderItem>(); // ?
+        private List<IOrderItem> items = new List<IOrderItem>(); // list of stuff we've added to the order
         private double subtotal;
         /// <summary>
         /// Gets the subtotal based on IOrderItems in the 'Items' IEnumerable

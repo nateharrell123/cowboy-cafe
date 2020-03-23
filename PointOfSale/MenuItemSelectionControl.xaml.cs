@@ -86,9 +86,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddBakedBeansButton(object sender, EventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new BakedBeans());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "BakedBeans":
+                            var item = new BakedBeans();
+                            var screen = new BakedBeansCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
 
@@ -190,9 +203,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddTexasTeaButton(object sender, EventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new TexasTea());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "TexasTea":
+                            var item = new TexasTea();
+                            var screen = new TexasTeaCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
         /// <summary>

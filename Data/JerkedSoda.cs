@@ -6,12 +6,23 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class JerkedSoda : Drink
+    public class JerkedSoda : Drink, INotifyPropertyChanged
     {
-        public SodaFlavor Flavor { get; set; }
+        private SodaFlavor flavor;
+        public SodaFlavor Flavor
+        {
+            get { return flavor; }
+            set
+            {
+                flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
         /// Gets the price of the Jerked Soda based on what size it is.
         /// </summary>
@@ -67,6 +78,8 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Overriding the ToString() method to print the beverage based on size and flavor.

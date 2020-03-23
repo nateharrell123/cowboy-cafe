@@ -9,11 +9,12 @@
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Choose Flavor" FontSize="26" TextAlignment="Center"/>
-            <CheckBox x:Name="Sarsparilla" Content="Sarsparilla"/>
-            <CheckBox x:Name="CreamSoda" Content="Cream Soda"/>
-            <CheckBox x:Name="OrangeSoda" Content="Orange Soda"/>
-            <CheckBox x:Name="BirchBeer" Content="Birch Beer"/>
-            <CheckBox x:Name="RootBeer" Content="Root Beer"/>
+            <RadioButton x:Name="Sarsparilla" Content="Sarsparilla"/>
+            <RadioButton x:Name="CreamSoda" Content="Cream Soda"/>
+            <RadioButton x:Name="OrangeSoda" Content="Orange Soda"/>
+            <RadioButton x:Name="BirchBeer" Content="Birch Beer"/>
+            <RadioButton x:Name="RootBeer" Content="Root Beer"/>
+            <CheckBox IsChecked="{Binding Path=Ice}" Content="Ice"/>
         </StackPanel>
     </Grid>
 </UserControl>
