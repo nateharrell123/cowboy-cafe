@@ -6,10 +6,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class Water : Drink
+    public class Water : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// The price for water.
@@ -37,11 +38,23 @@ namespace CowboyCafe.Data
         /// </summary>
         public override uint Calories { get { return 0; } }
 
+        private bool lemon = false;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// If the water is to be served with lemon (false by default).
         /// </summary>
-        public bool Lemon { get; set; } = false;
-
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <summary>
         /// Any special instructions for the water beverage.
         /// </summary>

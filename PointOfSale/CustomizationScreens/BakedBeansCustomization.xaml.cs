@@ -27,6 +27,11 @@ namespace PointOfSale.CustomizationScreens
             MediumButton.Checked += Medium_Checked;
             LargeButton.Checked += Large_Checked;
         }
+        /// <summary>
+        /// If Small is selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="arg"></param>
         private void Small_Checked(object sender, RoutedEventArgs arg)
         {
             if (DataContext is BakedBeans beans)

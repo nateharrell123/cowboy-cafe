@@ -36,6 +36,7 @@ namespace CowboyCafe.Data
             }
         }
 
+
         /// <summary>
         /// The calories for the Baked Beans side item.
         /// </summary>
