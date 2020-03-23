@@ -138,9 +138,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddCornDodgersButton(object sender, EventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new CornDodgers());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CornDodgers":
+                            var item = new CornDodgers();
+                            var screen = new CornDodgersCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
 
@@ -151,9 +164,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddPanDeCampoButton(object sender, EventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new PanDeCampo());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "PanDeCampo":
+                            var item = new PanDeCampo();
+                            var screen = new PanDeCampoCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
 

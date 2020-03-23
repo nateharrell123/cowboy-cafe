@@ -15,11 +15,11 @@ using CowboyCafe.Data;
 namespace PointOfSale.CustomizationScreens
 {
     /// <summary>
-    /// Interaction logic for BakedBeansCustomization.xaml
+    /// Interaction logic for PanDeCampoCustomization.xaml
     /// </summary>
-    public partial class BakedBeansCustomization : UserControl
+    public partial class PanDeCampoCustomization : UserControl
     {
-        public BakedBeansCustomization()
+        public PanDeCampoCustomization()
         {
             InitializeComponent();
 
@@ -29,9 +29,9 @@ namespace PointOfSale.CustomizationScreens
         }
         private void Small_Checked(object sender, RoutedEventArgs arg)
         {
-            if (DataContext is BakedBeans beans)
+            if (DataContext is PanDeCampo campo)
             {
-                beans.Size = CowboyCafe.Data.Size.Small;
+                campo.Size = CowboyCafe.Data.Size.Small;
             }
         }
         /// <summary>
@@ -41,9 +41,9 @@ namespace PointOfSale.CustomizationScreens
         /// <param name="arg"></param>
         private void Medium_Checked(object sender, RoutedEventArgs arg)
         {
-            if (DataContext is BakedBeans beans)
+            if (DataContext is PanDeCampo campo)
             {
-                beans.Size = CowboyCafe.Data.Size.Medium;
+                campo.Size = CowboyCafe.Data.Size.Medium;
             }
         }
         /// <summary>
@@ -53,9 +53,9 @@ namespace PointOfSale.CustomizationScreens
         /// <param name="arg"></param>
         private void Large_Checked(object sender, RoutedEventArgs arg)
         {
-            if (DataContext is ChiliCheeseFries beans)
+            if (DataContext is ChiliCheeseFries campo)
             {
-                beans.Size = CowboyCafe.Data.Size.Large;
+                campo.Size = CowboyCafe.Data.Size.Large;
             }
         }
     }

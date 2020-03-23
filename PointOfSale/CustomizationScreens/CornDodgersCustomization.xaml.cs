@@ -15,11 +15,11 @@ using CowboyCafe.Data;
 namespace PointOfSale.CustomizationScreens
 {
     /// <summary>
-    /// Interaction logic for BakedBeansCustomization.xaml
+    /// Interaction logic for CornDodgersCustomization.xaml
     /// </summary>
-    public partial class BakedBeansCustomization : UserControl
+    public partial class CornDodgersCustomization : UserControl
     {
-        public BakedBeansCustomization()
+        public CornDodgersCustomization()
         {
             InitializeComponent();
 
@@ -27,11 +27,12 @@ namespace PointOfSale.CustomizationScreens
             MediumButton.Checked += Medium_Checked;
             LargeButton.Checked += Large_Checked;
         }
+
         private void Small_Checked(object sender, RoutedEventArgs arg)
         {
-            if (DataContext is BakedBeans beans)
+            if (DataContext is CornDodgers corn)
             {
-                beans.Size = CowboyCafe.Data.Size.Small;
+                corn.Size = CowboyCafe.Data.Size.Small;
             }
         }
         /// <summary>
@@ -41,9 +42,9 @@ namespace PointOfSale.CustomizationScreens
         /// <param name="arg"></param>
         private void Medium_Checked(object sender, RoutedEventArgs arg)
         {
-            if (DataContext is BakedBeans beans)
+            if (DataContext is CornDodgers corn)
             {
-                beans.Size = CowboyCafe.Data.Size.Medium;
+                corn.Size = CowboyCafe.Data.Size.Medium;
             }
         }
         /// <summary>
@@ -53,9 +54,9 @@ namespace PointOfSale.CustomizationScreens
         /// <param name="arg"></param>
         private void Large_Checked(object sender, RoutedEventArgs arg)
         {
-            if (DataContext is ChiliCheeseFries beans)
+            if (DataContext is CornDodgers corn)
             {
-                beans.Size = CowboyCafe.Data.Size.Large;
+                corn.Size = CowboyCafe.Data.Size.Large;
             }
         }
     }
