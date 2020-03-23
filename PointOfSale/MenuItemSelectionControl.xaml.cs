@@ -190,9 +190,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddCowBoyCoffeeButton(object sender, EventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new CowboyCoffee());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowboyCoffee":
+                            var item = new CowboyCoffee();
+                            var screen = new CowboyCoffeeCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
 
@@ -254,9 +267,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddWaterButton(object sender, EventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                order.Add(new Water());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "Water":
+                            var item = new Water();
+                            var screen = new WaterCustomization();
+                            screen.DataContext = item;
+                            order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+                    }
+                }
             }
         }
 

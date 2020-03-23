@@ -57,7 +57,6 @@ namespace CowboyCafe.Data
             }
         }
 
-        public List<string> SpecialInstructions = new List<string>();
 
 
         /// <summary>

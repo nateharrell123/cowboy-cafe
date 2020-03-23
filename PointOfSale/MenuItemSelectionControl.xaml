@@ -45,7 +45,7 @@
         <!-- Buttons for Drinks-->
         <StackPanel Grid.Column= "2">
             <TextBlock TextAlignment= "Center">Drinks</TextBlock>
-            <Button x:Name = "CowboyCoffee" Click ="AddCowBoyCoffeeButton">Cowboy Coffee</Button>
+            <Button x:Name = "CowboyCoffee" Click ="AddCowBoyCoffeeButton" Tag="CowboyCoffee">Cowboy Coffee</Button>
             <Button x:Name = "JerkedSoda" Click = "AddJerkedSodaButton" Tag="JerkedSoda">Jerked Soda</Button>
             <Button x:Name ="TexasTea" Click = "AddTexasTeaButton" Tag="TexasTea">Texas Tea</Button>
             <Button x:Name ="Water" Click ="AddWaterButton">Water</Button>

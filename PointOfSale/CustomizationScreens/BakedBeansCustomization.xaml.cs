@@ -53,7 +53,7 @@ namespace PointOfSale.CustomizationScreens
         /// <param name="arg"></param>
         private void Large_Checked(object sender, RoutedEventArgs arg)
         {
-            if (DataContext is ChiliCheeseFries beans)
+            if (DataContext is BakedBeans beans)
             {
                 beans.Size = CowboyCafe.Data.Size.Large;
             }

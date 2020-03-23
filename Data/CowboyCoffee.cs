@@ -7,10 +7,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class CowboyCoffee : Drink
+    public class CowboyCoffee : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// The price for the Cowboy Coffee beverage.
@@ -72,15 +73,38 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool cream = false;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// If there's room for cream (false by default).
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get { return cream; }
+            set
+            {
+                cream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
+        private bool ice = false;
         /// <summary>
         /// If there's ice included (false by default).
         /// </summary>
-        public bool Ice {get; set;} = false;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// Override method to print the name of the beverage based on size, and if it's decaf or not.
