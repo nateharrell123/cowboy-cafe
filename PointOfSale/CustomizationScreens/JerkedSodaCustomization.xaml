@@ -14,7 +14,6 @@
             <RadioButton x:Name="OrangeSoda" Content="Orange Soda"/>
             <RadioButton x:Name="BirchBeer" Content="Birch Beer"/>
             <RadioButton x:Name="RootBeer" Content="Root Beer"/>
-            <CheckBox IsChecked="{Binding Path=Ice}" Content="Ice"/>
         </StackPanel>
     </Grid>
 </UserControl>
