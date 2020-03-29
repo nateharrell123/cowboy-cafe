@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -92,6 +93,31 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold cheese", chili.SpecialInstructions);
             Assert.Contains("hold sour cream", chili.SpecialInstructions);
             Assert.Contains("hold green onions", chili.SpecialInstructions);
+        }
+
+        [Fact]
+        public void CowPokeChiliImplementsINotifyPropertyChanged()
+        {
+            var chili = new CowpokeChili();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chili);
+        }
+
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForCheese()
+        {
+            var chili = new CowpokeChili();
+            Assert.PropertyChanged(chili, "Cheese", () => {
+                chili.Cheese = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var chili = new CowpokeChili();
+            Assert.PropertyChanged(chili, "SpecialInstructions", () => {
+                chili.Cheese = false;
+            });
         }
     }
 }

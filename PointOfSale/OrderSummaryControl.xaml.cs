@@ -33,8 +33,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ModifyOrder(object sender, SelectionChangedEventArgs e)
         {
-            var item = OrderListBox.SelectedItem;
-            CheckTypeAndLoadScreen(item);
+            try
+            {
+                var item = OrderListBox.SelectedItem;
+                CheckTypeAndLoadScreen(item);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("MAYDAY MAYDAY!! ABORT ABORT!!");
+            }
         }
 
 
