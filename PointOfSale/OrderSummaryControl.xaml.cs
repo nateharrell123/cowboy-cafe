@@ -26,16 +26,7 @@ namespace PointOfSale
 
         private void ModifyOrder(object sender, SelectionChangedEventArgs e)
         {
-            if(DataContext is Order order)
-            { 
-                switch(order.Items)
-                {
-                    case ("AngryChicken"):
-                        Console.WriteLine();
-                        break;
-
-                }
-            }
+            
         }
     }
 }
