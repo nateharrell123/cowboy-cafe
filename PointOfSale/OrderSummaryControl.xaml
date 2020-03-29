@@ -33,6 +33,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -40,6 +41,7 @@
                             </Grid.RowDefinitions>
                             <TextBlock Text="{Binding}"/>
                             <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Price, StringFormat=c}"/>
+                            <Button x:Name="RedButton" HorizontalAlignment="Right" Width="25" Grid.Column="2" Content="X" Click="RemoveItem" Background="Red"/>
                             <ListView ItemsSource="{Binding Path=SpecialInstructions}" Grid.Row="1" Grid.ColumnSpan="2"/>
                         </Grid>
                     </DataTemplate>

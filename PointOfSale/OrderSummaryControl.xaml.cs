@@ -44,6 +44,20 @@ namespace PointOfSale
             }
         }
 
+        private void RemoveItem(object sender, RoutedEventArgs e)
+        {
+            if(DataContext is Order order) // these feel redundent
+            {
+                if(sender is Button button)
+                {
+                    if(button.DataContext is IOrderItem item)
+                    {
+                        order.Remove(item);
+                    }
+                }
+            }
+        }
+
 
         private void CheckTypeAndLoadScreen(object item) // too many if statements :-(
         {
