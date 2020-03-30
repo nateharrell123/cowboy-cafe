@@ -15,6 +15,18 @@ namespace CowboyCafe.Data
     /// </summary>
     public class ChiliCheeseFries : Side, INotifyPropertyChanged
     {
+        private Size size;
+
+        public override Size Size
+        {
+            get { return size; }
+            set 
+            { 
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
         /// <summary>
         /// Calories for the Chili Cheese Fries Side item.
         /// </summary>

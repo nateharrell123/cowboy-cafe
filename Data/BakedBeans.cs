@@ -14,9 +14,8 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class representing the Baked Beans side item.
     /// </summary>
-    public class BakedBeans : Side, INotifyPropertyChanged
+    public class BakedBeans : Side
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// The price for the Baked Beans side item.

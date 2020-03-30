@@ -9,9 +9,9 @@
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBlock FontSize="26" Text="Customize these Baked Beans!" TextAlignment="Center"/>
-            <RadioButton x:Name="SmallButton" Content="Small"/>
-            <RadioButton x:Name="MediumButton" Content="Medium"/>
-            <RadioButton x:Name="LargeButton" Content="Large"/>
+            <RadioButton Name="SmallButton" Content="Small"/>
+            <RadioButton Name="MediumButton" Checked="Medium_Checked" Content="Medium"/>
+            <RadioButton Name="LargeButton" Content="Large"/>
         </StackPanel>        
     </Grid>
 </UserControl>

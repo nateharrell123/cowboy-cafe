@@ -15,10 +15,9 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Side:IOrderItem, INotifyPropertyChanged
     {
+
         private Size size;
-        /// <summary>
-        /// Gets the size of the entree
-        /// </summary>
+
         public virtual Size Size
         {
             get { return size; }

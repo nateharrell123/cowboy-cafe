@@ -15,9 +15,9 @@
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Size" FontSize="18"/>
-                <RadioButton x:Name="SmallButton" Content="Small"/>
-                <RadioButton x:Name="MediumButton" Content="Medium"/>
-                <RadioButton x:Name="LargeButton" Content="Large"/>
+                <RadioButton Name="SmallButton" Content="Small"/>
+                <RadioButton Name="MediumButton" Content="Medium"/>
+                <RadioButton Name="LargeButton" Content="Large"/>
             </StackPanel>
         </StackPanel>
     </Grid>
