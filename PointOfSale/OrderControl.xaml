@@ -24,8 +24,6 @@
         <Button x:Name="CancelOrderButton" Click="CancelOrderButtonClicked" Grid.Column="1">Cancel Order</Button>
         <Button x:Name="CompleteOrder" Click="CompleteOrderButtonClicked" Grid.Column="3">Complete Order</Button>
 
-        <Button x:Name="CompleteTransactionButton" Click="FinalizeOrderClicked" Grid.Row="1" Grid.Column="1" Content="Finalize Order" Margin="0,21,0,327"/>
-
         <Border Name="Container" Grid.Row="1" Grid.Column="2">
             <local:MenuItemSelectionControl Grid.Row="1" />
         </Border>
