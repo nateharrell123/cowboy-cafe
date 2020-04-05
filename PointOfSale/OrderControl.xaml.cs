@@ -26,6 +26,11 @@ namespace PointOfSale
             this.DataContext = order;
         }
 
+        private void FinalizeOrderClicked(object sender, RoutedEventArgs e)
+        {
+            Container.Child = new TransactionControl();
+        }
+
         private void ItemSelectionButtonClicked(object sender, RoutedEventArgs e)
         {
             Container.Child = new MenuItemSelectionControl();

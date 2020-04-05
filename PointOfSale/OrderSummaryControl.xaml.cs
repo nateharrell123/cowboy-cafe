@@ -44,6 +44,8 @@ namespace PointOfSale
             }
         }
 
+
+
         private void RemoveItem(object sender, RoutedEventArgs e)
         {
             if(DataContext is Order order) // these feel redundent
@@ -137,6 +139,12 @@ namespace PointOfSale
             if (item is TrailBurger)
             {
                 var screen = new TrailBurgerCustomization();
+                screen.DataContext = item;
+                orderControl?.SwapScreen(screen);
+            }
+            if(item is TransactionControl)
+            {
+                var screen = new TransactionControl();
                 screen.DataContext = item;
                 orderControl?.SwapScreen(screen);
             }

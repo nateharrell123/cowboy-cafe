@@ -9,8 +9,8 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="400"/>
-            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
 
@@ -20,13 +20,14 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="ItemSelectionButton" Click="ItemSelectionButtonClicked" Grid.Column="1">Item Selection</Button>
-        <Button x:Name="CancelOrderButton" Click="CancelOrderButtonClicked" Grid.Column="2">Cancel Order</Button>
+        <Button x:Name="ItemSelectionButton"  Click="ItemSelectionButtonClicked" Grid.Column="2">Item Selection</Button>
+        <Button x:Name="CancelOrderButton" Click="CancelOrderButtonClicked" Grid.Column="1">Cancel Order</Button>
         <Button x:Name="CompleteOrder" Click="CompleteOrderButtonClicked" Grid.Column="3">Complete Order</Button>
 
+        <Button x:Name="CompleteTransactionButton" Click="FinalizeOrderClicked" Grid.Row="1" Grid.Column="1" Content="Finalize Order" Margin="0,21,0,327"/>
 
-        <Border Name="Container" Grid.Row="1" Grid.Column="1">
-            <local:MenuItemSelectionControl Grid.Row="1"/>
+        <Border Name="Container" Grid.Row="1" Grid.Column="2">
+            <local:MenuItemSelectionControl Grid.Row="1" />
         </Border>
 
         <local:OrderSummaryControl Grid.Column="0" Grid.RowSpan="3" Margin="0,61,0,5"/>
