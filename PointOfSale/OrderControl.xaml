@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="525" d:DesignWidth="1100">
+             d:DesignHeight="700" d:DesignWidth="1100">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400"/>
@@ -22,7 +22,7 @@
 
         <Button x:Name="ItemSelectionButton"  Click="ItemSelectionButtonClicked" Grid.Column="2">Item Selection</Button>
         <Button x:Name="CancelOrderButton" Click="CancelOrderButtonClicked" Grid.Column="1">Cancel Order</Button>
-        <Button x:Name="CompleteOrder" Click="CompleteOrderButtonClicked" Grid.Column="3">Complete Order</Button>
+        <Button x:Name="CompleteOrder" Click="CompleteOrderButtonClicked" Grid.Row="1" Grid.Column="1" Margin="0,22,0,319">Complete Order</Button>
 
         <Border Name="Container" Grid.Row="1" Grid.Column="2">
             <local:MenuItemSelectionControl Grid.Row="1" />
