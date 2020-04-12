@@ -17,26 +17,33 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <local1:OrderSummaryControl Grid.Column="1" Width="300">
+        <local1:OrderSummaryControl Grid.Column="1" Height="300" Width="300">
         </local1:OrderSummaryControl>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
-            <local:CoinControl Denomination="Penny" Quantity="{Binding Path=Pennies}"/>
-            <local:CoinControl Denomination="Dime" Quantity="{Binding Path=Dimes}" />
-            <local:CoinControl Denomination="Nickel" Quantity="{Binding Path=Nickels}" />
-            <local:CoinControl Denomination="Quarter" Quantity="{Binding Path=Quarters}" />
-            <local:CoinControl Denomination="HalfDollar" Quantity="{Binding Path=HalfDollar}"/>
-            <local:CoinControl Denomination="Dollar" Quantity="{Binding Path=Dollar}" />
-        </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
+                <local:CoinControl Denomination="Penny" Quantity="{Binding Path=Pennies}"/>
+                <local:CoinControl Denomination="Dime" Quantity="{Binding Path=Dimes}" />
+                <local:CoinControl Denomination="Nickel" Quantity="{Binding Path=Nickels}" />
+                <local:CoinControl Denomination="Quarter" Quantity="{Binding Path=Quarters}" />
+                <local:CoinControl Denomination="HalfDollar" Quantity="{Binding Path=HalfDollar}"/>
+                <local:CoinControl Denomination="Dollar" Quantity="{Binding Path=Dollar}" />
+            </StackPanel>
 
-        <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0">
-            <local:DollarControl Denomination="One" Quantity="{Binding Path=Ones}" />
-            <local:DollarControl Denomination="Two" Quantity="{Binding Path=Twos}" />
-            <local:DollarControl Denomination="Five" Quantity="{Binding Path=Fives}" />
-            <local:DollarControl Denomination="Ten" Quantity="{Binding Path=Tens}" />
-            <local:DollarControl Denomination="Twenty" Quantity="{Binding Path=Twenties}"/>
-            <local:DollarControl Denomination="Fifty" Quantity="{Binding Path=Fifties}" />
-            <local:DollarControl Denomination="Hundred" Quantity="{Binding Path=Hundreds}"/>
-        </StackPanel>
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Top" Grid.Row="0">
+                <local:DollarControl Denomination="One" Quantity="{Binding Path=Ones}" />
+                <local:DollarControl Denomination="Two" Quantity="{Binding Path=Twos}" />
+                <local:DollarControl Denomination="Five" Quantity="{Binding Path=Fives}" />
+                <local:DollarControl Denomination="Ten" Quantity="{Binding Path=Tens}" />
+                <local:DollarControl Denomination="Twenty" Quantity="{Binding Path=Twenties}"/>
+                <local:DollarControl Denomination="Fifty" Quantity="{Binding Path=Fifties}" />
+                <local:DollarControl Denomination="Hundred" Quantity="{Binding Path=Hundreds}"/>
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </UserControl>
