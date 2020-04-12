@@ -43,10 +43,13 @@ namespace PointOfSale
 
         private void CompleteOrderButtonClicked(object sender, RoutedEventArgs e)
         {
-            // this.DataContext = new Order();
-
             var screen = new TransactionControl();
-            SwapScreen(screen);
+            if(DataContext is Order order)
+            {
+                screen.DataContext = order;
+                this.Content = screen;
+                
+            }
         }
 
         public void SwapScreen(FrameworkElement element) // Framework element is a base class for all UI elements

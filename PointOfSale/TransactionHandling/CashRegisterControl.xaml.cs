@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PointOfSale
+namespace PointOfSale.TransactionHandling
 {
     /// <summary>
-    /// Interaction logic for TransactionControl.xaml
+    /// Interaction logic for CashRegisterControl.xaml
     /// </summary>
-    public partial class TransactionControl : UserControl
+    public partial class CashRegisterControl : UserControl
     {
-        public TransactionControl()
+        public CashRegisterControl()
         {
             InitializeComponent();
         }

@@ -5,13 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <!--Modifies the List Box Items-->
-    <UserControl.Resources>
-        <Style TargetType="ListBoxItem">
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-        </Style>
-    </UserControl.Resources>
+             d:DesignHeight="525" d:DesignWidth="600">
+
 
     <!-- Defining rows-->
     <Grid>
@@ -21,12 +16,17 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
         <!-- Saying the text for this textbox will be whatever the OrderNumber property is.-->
         <TextBlock Grid.Row="0" Text="{Binding Path=OrderNumber, StringFormat={} Order {0}}"/>
 
         <!--The name of this will be whatever the 'Items' property is.-->
         <StackPanel Grid.Row="1">
-            <ListBox Name ="OrderListBox" ItemsSource="{Binding Path=Items}" Height="460">
+            <ListBox Name ="OrderListBox" ItemsSource="{Binding Path=Items}" Height="460" Width="200">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -52,5 +52,12 @@
             <TextBlock>Subtotal:</TextBlock>
             <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}"/>
         </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+            <Button x:Name="Cash" Margin="30" Click="CashClicked" Height="50" Width="100" Grid.Row="1" Content="Cash" Grid.Column="1"/>
+            <Button x:Name="Card" Click="CardClicked" Height="50" Width="100" Grid.Row="1" Content="Card" Grid.Column="2"/>
+            <Button x:Name="Cancel" Margin="30" Click="CancelClicked" Height="50" Width="100" Grid.Row="1" Content="Cancel" Grid.Column="2"/>
+        </StackPanel>
+        
     </Grid>
 </UserControl>
