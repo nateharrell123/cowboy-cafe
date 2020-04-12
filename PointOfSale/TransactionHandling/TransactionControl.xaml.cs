@@ -27,8 +27,7 @@ namespace PointOfSale
 
         private void CashClicked(object sender, RoutedEventArgs e)
         {
-            var screen = new DollarControl();
-            
+            this.Content = new CashRegisterControl();
         }
 
         private void CardClicked(object sender, RoutedEventArgs e)
