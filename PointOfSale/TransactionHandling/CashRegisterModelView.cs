@@ -8,7 +8,6 @@ namespace PointOfSale.TransactionHandling
 {
     public class CashRegisterModelView: INotifyPropertyChanged
     {
-
         /// <summary>
         /// Notifies of property changed events.
         /// </summary>

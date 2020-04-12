@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CowboyCafe.Data;
+using PointOfSale.TransactionHandling;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -25,7 +27,8 @@ namespace PointOfSale
 
         private void CashClicked(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Hey");
+            var screen = new DollarControl();
+            
         }
 
         private void CardClicked(object sender, RoutedEventArgs e)
@@ -34,7 +37,7 @@ namespace PointOfSale
         }
         private void CancelClicked(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Hey");
+            this.Content = new OrderControl();
         }
     }
 }
