@@ -1,7 +1,7 @@
 ﻿{
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:49160",
       "sslPort": 44340
@@ -23,7 +23,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    
+
     // Profile for production mode
     "WebsiteProduction": {
       "commandName": "Project",
@@ -33,4 +33,5 @@
         "ASPNETCORE_ENVIRONMENT": "Production"
       }
     }
+  }
 }
