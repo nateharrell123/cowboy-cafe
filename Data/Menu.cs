@@ -4,17 +4,93 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    static class Menu
+    public static class Menu
     {
-        static IEnumerable<IOrderItem> Entrees()
+        /// <summary>
+        /// List of Entree items.
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> Entrees()
         {
-            var chili = new CowpokeChili();
-            var dakotaDoubleBurger = new DakotaDoubleBurger();
-            var pecosPulledPork = new PecosPulledPork();
-            var rustlersRibs = new RustlersRibs();
-            var texasTripleBurger = new TexasTripleBurger();
-            var trailBurger = new TrailBurger();
-
+            List<IOrderItem> entrees = new List<IOrderItem>()
+            {
+                new AngryChicken(),
+                new CowpokeChili(),
+                new DakotaDoubleBurger(),
+                new PecosPulledPork(),
+                new RustlersRibs(),
+                new TexasTripleBurger(),
+                new TrailBurger()
+            };
+            return entrees;
         }
+        
+        public static IEnumerable<IOrderItem> EntreeList { get { return Entrees(); } }
+
+        /// <summary>
+        /// List of Sides.
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> Sides()
+        {
+            List<IOrderItem> sides = new List<IOrderItem>()
+            {
+                new BakedBeans(),
+                new ChiliCheeseFries(),
+                new CornDodgers(),
+                new PanDeCampo(),
+            };
+            return sides;
+        }
+
+        public static IEnumerable<IOrderItem> SidesList { get { return Sides(); } }
+
+        /// <summary>
+        /// List of drinks
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> Drinks()
+        {
+            List<IOrderItem> drinks = new List<IOrderItem>()
+            {
+                new JerkedSoda(),
+                new TexasTea(),
+                new Water()
+            };
+
+            return drinks;
+        }
+        public static IEnumerable<IOrderItem> DrinksList { get { return Drinks(); } }
+
+        /// <summary>
+        /// Full menu list.
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> CompleteMenu()
+        {
+            List<object> menu = new List<object>()
+            {
+                new AngryChicken(),
+                new CowpokeChili(),
+                new DakotaDoubleBurger(),
+                new PecosPulledPork(),
+                new RustlersRibs(),
+                new TexasTripleBurger(),
+                new TrailBurger(),
+
+                new BakedBeans(),
+                new ChiliCheeseFries(),
+                new CornDodgers(),
+                new PanDeCampo(),
+
+                new JerkedSoda(),
+                new TexasTea(),
+                new Water()
+            };
+
+            return menu as IEnumerable<IOrderItem>;
+        }
+
+
     }
 }

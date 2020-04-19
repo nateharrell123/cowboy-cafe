@@ -1,5 +1,6 @@
 ﻿@page
 @model IndexModel
+@using CowboyCafe.Data
 @{
     ViewData["Title"] = "Home page";
 }
@@ -14,14 +15,41 @@
     </i>
 </div>
 
-<h2>
-    Entrees
-</h2>
+<h2>Entrees</h2>
+    <ul>
+        @foreach (Entree entree in Menu.EntreeList)
+        {
+            <li>
+                <div class="menu-item">
+                    <h3>@entree</h3>
+                </div>
+            </li>
+        }
+    </ul>
 
-<h2>
-    Sides
-</h2>
+<h2>Sides</h2>
+<ul>
+    @foreach(Side side in Menu.SidesList)
+    {
+        <li>
+            <div class="menu-item">
+                <h3>@side</h3>
+                <h4>Calories (Small): @side.Calories</h4>
+                <h4>Calories (@(side.Size = Size.Medium)): @side.Calories</h4>
+                <h4>Calories (@(side.Size = Size.Large)): @side.Calories</h4>
+            </div>
+        </li>
+    }
+</ul>
 
-<h2>
-    Drinks
-</h2>
+<h2>Drinks</h2>
+<ul>
+    @foreach(Drink drink in Menu.DrinksList)
+    {
+        <li>
+            <div class="menu-item">
+                <h3>@drink</h3>
+            </div>
+        </li>
+    }
+</ul>
