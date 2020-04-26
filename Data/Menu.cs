@@ -97,9 +97,11 @@ namespace CowboyCafe.Data
         /// <param name="orderItem">Type of item they're searching for</param>
         /// <param name="searchTerm">What they're searching for (user input)</param>
         /// <returns></returns>
+        /*
         public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> orderItem, string searchTerm)
         {
 
         }
+        */
     }
 }

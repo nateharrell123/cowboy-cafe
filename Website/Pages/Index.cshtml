@@ -14,7 +14,14 @@
     </div>
     <!--Search filters-->
     <div id="filters">
-        
+        <h4>Entrees</h4>
+        @foreach(var entree in Menu.EntreeList)
+        {
+            <label>
+                <input type="checkbox" name="Entrees" value="@entree" />
+                @entree
+            </label>
+        }
     </div>
 
 </form>
