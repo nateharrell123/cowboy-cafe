@@ -113,6 +113,33 @@ namespace CowboyCafe.Data
             return results;
         }
 
-        public IEnumerable<IOrderItem> FilterByCategory()
+        /// <summary>
+        /// Filtering search results by selected category.
+        /// </summary>
+        /// <param name="order"></param>
+        /// <param name="filter"></param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> order, IEnumerable<string> filter)
+        {
+            if (filter == null || filter.Count() == 0) return null;
+
+            List<IOrderItem> items = new List<IOrderItem>();
+
+            foreach(var item in order)
+            {
+                if(order.ToString() != null && order.ToString().Contains(filter.ToString()))
+                {
+                    items.Add(item);
+                }
+            }
+            return items;
+        }
+
+        /*
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> item, int? min, int? max)
+        {
+
+        }
+        */
     }
 }
