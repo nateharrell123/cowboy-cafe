@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -92,16 +93,26 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Searches our Menu for corresponding searchTerms.
+        /// Searches our Menu for corresponding search terms.
         /// </summary>
         /// <param name="orderItem">Type of item they're searching for</param>
         /// <param name="searchTerm">What they're searching for (user input)</param>
         /// <returns></returns>
-        /*
-        public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> orderItem, string searchTerm)
+        public static IEnumerable<IOrderItem> Search(string term)
         {
+            if (term == null) return EntreeList;
+            List<IOrderItem> results = new List<IOrderItem>();
 
+            foreach (var item in CompleteMenu())
+            {
+                if (item != null && item.ToString().Contains(term))
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
         }
-        */
+
+        public IEnumerable<IOrderItem> FilterByCategory()
     }
 }
