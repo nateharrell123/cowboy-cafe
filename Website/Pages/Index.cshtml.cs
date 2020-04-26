@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using CowboyCafe.Data;
 
 namespace Website.Pages
 {
@@ -17,6 +18,8 @@ namespace Website.Pages
 
         public string EntreeSearch { get; set; }
 
+        public IEnumerable<IOrderItem> Items { get; protected set; }
+
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -26,7 +29,9 @@ namespace Website.Pages
         public void OnGet()
         {
             SearchTerms = Request.Query["SearchTerms"]; // run Query on property?
-            EntreeSearch = Request.Query["EntreeSearch"]; 
+            EntreeSearch = Request.Query["EntreeSearch"];
+            Items = Menu.Search(SearchTerms);
+            Items = Menu.Search(SearchTerms);
         }
     }
 }

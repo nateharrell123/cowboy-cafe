@@ -135,11 +135,47 @@ namespace CowboyCafe.Data
             return items;
         }
 
-        /*
-        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> item, int? min, int? max)
+        /// <summary>
+        /// Filtering results by calories.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> calories, int? min, int? max)
         {
+            if (min == null && max == null) return calories;
+            var results = new List<IOrderItem>();
 
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (Entree item in calories)
+                {
+                    if (item.Calories <= max) results.Add(item);
+                }
+                return results;
+            }
+            // only a minimum specified 
+            if (max == null)
+            {
+                foreach (Entree item in calories)
+                {
+                    if (item.Calories >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (Entree item in calories)
+            {
+                if (item.Calories >= min && item.Calories <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
         }
-        */
+        
     }
 }
