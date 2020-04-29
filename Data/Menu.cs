@@ -26,25 +26,41 @@ namespace CowboyCafe.Data
             return entrees;
         }
         
-        public static IEnumerable<IOrderItem> EntreeList { get { return Entrees(); } }
-
         /// <summary>
         /// List of Sides.
         /// </summary>
         /// <returns></returns>
         public static IEnumerable<IOrderItem> Sides()
         {
-            List<IOrderItem> sides = new List<IOrderItem>()
+            List<IOrderItem> sides = new List<IOrderItem>();
+
+            foreach (Size size in Enum.GetValues(typeof(Size)))
             {
-                new BakedBeans(),
-                new ChiliCheeseFries(),
-                new CornDodgers(),
-                new PanDeCampo(),
-            };
+                BakedBeans beans = new BakedBeans();
+                beans.Size = size;
+                sides.Add(beans);
+            }
+
+            foreach(Size size in Enum.GetValues(typeof(Size)))
+            {
+                ChiliCheeseFries fries = new ChiliCheeseFries();
+                fries.Size = size;
+                sides.Add(fries);
+            }
+            foreach(Size size in Enum.GetValues(typeof(Size)))
+            {
+                CornDodgers corn = new CornDodgers();
+                corn.Size = size;
+                sides.Add(corn);
+            }
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
+                PanDeCampo pan = new PanDeCampo();
+                pan.Size = size;
+                sides.Add(pan);
+            }
             return sides;
         }
-
-        public static IEnumerable<IOrderItem> SidesList { get { return Sides(); } }
 
         /// <summary>
         /// List of drinks
@@ -52,17 +68,37 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public static IEnumerable<IOrderItem> Drinks()
         {
-            List<IOrderItem> drinks = new List<IOrderItem>()
-            {
-                new CowboyCoffee(),
-                new JerkedSoda(),
-                new TexasTea(),
-                new Water()
-            };
+            var temp = Enum.GetValues(typeof(Size));
+            List<IOrderItem> drinks = new List<IOrderItem>();
 
+            foreach (Size size in temp)
+            {
+                CowboyCoffee coffee = new CowboyCoffee();
+                coffee.Size = size;
+                drinks.Add(coffee);
+            }
+
+            foreach (Size size in temp)
+            {
+                JerkedSoda soda = new JerkedSoda();
+                soda.Size = size;
+                drinks.Add(soda);
+            }
+            foreach (Size size in temp)
+            {
+                TexasTea tea = new TexasTea();
+                tea.Size = size;
+                drinks.Add(tea);
+            }
+
+            foreach (Size size in temp)
+            {
+                Water water = new Water();
+                water.Size = size;
+                drinks.Add(water);
+            }
             return drinks;
         }
-        public static IEnumerable<IOrderItem> DrinksList { get { return Drinks(); } }
 
         /// <summary>
         /// Full menu list.
@@ -70,26 +106,22 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public static IEnumerable<IOrderItem> CompleteMenu()
         {
-            List<IOrderItem> menu = new List<IOrderItem>()
+            List<IOrderItem> menu = new List<IOrderItem>();
+
+            foreach(var item in Entrees())
             {
-                new AngryChicken(),
-                new CowpokeChili(),
-                new DakotaDoubleBurger(),
-                new PecosPulledPork(),
-                new RustlersRibs(),
-                new TexasTripleBurger(),
-                new TrailBurger(),
+                menu.Add(item);
+            }
 
-                new BakedBeans(),
-                new ChiliCheeseFries(),
-                new CornDodgers(),
-                new PanDeCampo(),
+            foreach(var item in Drinks())
+            {
+                menu.Add(item);
+            }
 
-                new JerkedSoda(),
-                new TexasTea(),
-                new Water()
-            };
-
+            foreach (var item in Sides())
+            {
+                menu.Add(item);
+            }
             return menu;
         }
 

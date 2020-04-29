@@ -13,6 +13,8 @@ namespace CowboyCafe.Data
 
         uint Calories { get; }
 
+
+
         List<string> SpecialInstructions { get; } // interfaces have to have getters and setters or methods. No fields exist in interfaces.
     }
 }

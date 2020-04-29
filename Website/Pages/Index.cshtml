@@ -67,19 +67,23 @@
 
             <h2>Sides</h2>
             <ul>
-                @foreach (Side side in Menu.SidesList)
+                @foreach (IOrderItem item in Model.MenuItems)
                 {
-                    <li>
-                        <div class="menu-item">
-                            <h3>@side</h3>
-                            <h4>Calories (Small): @side.Calories</h4>
-                            <h5>Price $@side.Price</h5>
-                            <h4>Calories (@(side.Size = Size.Medium)): @side.Calories</h4>
-                            <h5>Price $@side.Price</h5>
-                            <h4>Calories (@(side.Size = Size.Large)): @side.Calories</h4>
-                            <h5>Price $@side.Price</h5>
-                        </div>
-                    </li>
+                    @if (item is Side side)
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <h3>@side</h3>
+                                <h4>Calories (Small): @item.Calories</h4>
+                                <h5>Price $@item.Price</h5>
+                                <h4>Calories (@(item.Size = Size.Medium)): @item.Calories</h4>
+                                <h5>Price $@item.Price</h5>
+                                <h4>Calories (@(item.Size = Size.Large)): @item.Calories</h4>
+                                <h5>Price $@item.Price</h5>
+                            </div>
+                        </li>
+                    }
+
                 }
             </ul>
         </div>
