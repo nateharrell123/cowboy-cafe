@@ -9,16 +9,22 @@ using CowboyCafe.Data;
 
 namespace Website.Pages
 {
+    /// <summary>
+    /// This is Page Model
+    /// </summary>
     public class IndexModel : PageModel
     {
+        [BindProperty]
         /// <summary>
         /// Search input from the user.
         /// </summary>
         public string SearchTerms { get; set; }
 
+        [BindProperty]
         public string EntreeSearch { get; set; }
 
-        public IEnumerable<IOrderItem> Items { get; protected set; }
+        [BindProperty]
+        public IEnumerable<IOrderItem> MenuItems { get; protected set; }
 
         private readonly ILogger<IndexModel> _logger;
 
@@ -28,10 +34,10 @@ namespace Website.Pages
         }
         public void OnGet()
         {
+            MenuItems = Menu.All;
             SearchTerms = Request.Query["SearchTerms"]; // run Query on property?
             EntreeSearch = Request.Query["EntreeSearch"];
-            Items = Menu.Search(SearchTerms);
-            Items = Menu.Search(SearchTerms);
+            MenuItems = Menu.Search(SearchTerms);
         }
     }
 }

@@ -92,6 +92,10 @@ namespace CowboyCafe.Data
             return menu as IEnumerable<IOrderItem>;
         }
 
+        public static IEnumerable<IOrderItem> All => CompleteMenu();
+
+         
+
         /// <summary>
         /// Searches our Menu for corresponding search terms.
         /// </summary>
@@ -100,12 +104,13 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public static IEnumerable<IOrderItem> Search(string term)
         {
-            if (term == null) return EntreeList;
+            if (term == null) return All;
+
             List<IOrderItem> results = new List<IOrderItem>();
 
             foreach (var item in CompleteMenu())
             {
-                if (item != null && item.ToString().Contains(term))
+                if (item.ToString() != null && item.ToString().Contains(term, StringComparison.InvariantCultureIgnoreCase))
                 {
                     results.Add(item);
                 }

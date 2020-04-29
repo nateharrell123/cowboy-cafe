@@ -11,14 +11,14 @@
     <!--Search box-->
     <div id="search">
         <input type="text" name="SearchInput" value="@Model.SearchTerms" />
-        <input type="submit" value="Search"/>
+        <input type="submit" value="Search" />
     </div>
     <!--Search filters-->
     <div id="filters">
         <!--Entree List-->
         <label>
             Entrees
-            <input type="checkbox" name="EntreesBox"/>
+            <input type="checkbox" name="EntreesBox" />
 
         </label>
         <!--Sides List-->
@@ -38,6 +38,76 @@
         and
         <input name="MaxCalories" type="number" min="0" max="1000" step="0.1" placeholder="min" />
     </div>
+
+    <!--Entrees-->
+    <div class="columnContainer">
+        <div class="column">
+
+            <h2>Entrees</h2>
+            <ul>
+                @foreach (var item in Model.MenuItems)
+                {
+                    @if (item is Entree entree)
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <h3>@entree</h3>
+                                <h5>Price: $@string.Format("{0:#.00}", entree.Price)</h5>
+                                <h5>Calories: @entree.Calories</h5>
+                            </div>
+                        </li>
+                    }
+
+                }
+            </ul>
+        </div>
+
+        <!--Sides-->
+        <div class="column">
+
+            <h2>Sides</h2>
+            <ul>
+                @foreach (Side side in Menu.SidesList)
+                {
+                    <li>
+                        <div class="menu-item">
+                            <h3>@side</h3>
+                            <h4>Calories (Small): @side.Calories</h4>
+                            <h5>Price $@side.Price</h5>
+                            <h4>Calories (@(side.Size = Size.Medium)): @side.Calories</h4>
+                            <h5>Price $@side.Price</h5>
+                            <h4>Calories (@(side.Size = Size.Large)): @side.Calories</h4>
+                            <h5>Price $@side.Price</h5>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <!--Drinks-->
+        <div class="column">
+            <h2>Drinks</h2>
+            <ul>
+                @foreach (Drink drink in Menu.DrinksList)
+                {
+                    <li>
+                        <div class="menu-item">
+                            <h3>@drink</h3>
+                            @if (drink.ToString() == "Small Water") return;
+                            <h4>Calories (Small): @drink.Calories</h4>
+                            <h5>Price: $@string.Format("{0:#.00}", drink.Price)</h5>
+                            <h4>Calories (@(drink.Size = Size.Medium)): @drink.Calories</h4>
+                            <h5>Price: $@string.Format("{0:#.00}", drink.Price)</h5>
+                            <h4>Calories (@(drink.Size = Size.Large)): @drink.Calories</h4>
+                            <h5>Price: $@string.Format("{0:#.00}", drink.Price)</h5>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+        <!--Putting columns into 'columnContainer-->
+    </div>
+
 </form>
 
 <div class="text-center">
@@ -49,67 +119,3 @@
     </i>
 </div>
 
-<!--Entrees-->
-<div class="columnContainer">
-    <div class="column">
-
-        <h2>Entrees</h2>
-        <ul>
-            @foreach (Entree entree in Menu.EntreeList)
-            {
-                <li>
-                    <div class="menu-item">
-                        <h3>@entree</h3>
-                        <h5>Price: $@string.Format("{0:#.00}", entree.Price)</h5>
-                        <h5>Calories: @entree.Calories</h5>
-                    </div>
-                </li>
-            }
-        </ul>
-    </div>
-
-    <!--Sides-->
-    <div class="column">
-
-        <h2>Sides</h2>
-        <ul>
-            @foreach (Side side in Menu.SidesList)
-            {
-                <li>
-                    <div class="menu-item">
-                        <h3>@side</h3>
-                        <h4>Calories (Small): @side.Calories</h4>
-                        <h5>Price $@side.Price</h5>
-                        <h4>Calories (@(side.Size = Size.Medium)): @side.Calories</h4>
-                        <h5>Price $@side.Price</h5>
-                        <h4>Calories (@(side.Size = Size.Large)): @side.Calories</h4>
-                        <h5>Price $@side.Price</h5>
-                    </div>
-                </li>
-            }
-        </ul>
-    </div>
-
-    <!--Drinks-->
-    <div class="column">
-        <h2>Drinks</h2>
-        <ul>
-            @foreach (Drink drink in Menu.DrinksList)
-            {
-                <li>
-                    <div class="menu-item">
-                        <h3>@drink</h3>
-                        @if (drink.ToString() == "Small Water") return;
-                        <h4>Calories (Small): @drink.Calories</h4>
-                        <h5>Price: $@string.Format("{0:#.00}", drink.Price)</h5>
-                        <h4>Calories (@(drink.Size = Size.Medium)): @drink.Calories</h4>
-                        <h5>Price: $@string.Format("{0:#.00}", drink.Price)</h5>
-                        <h4>Calories (@(drink.Size = Size.Large)): @drink.Calories</h4>
-                        <h5>Price: $@string.Format("{0:#.00}", drink.Price)</h5>
-                    </div>
-                </li>
-            }
-        </ul>
-    </div>
-    <!--Putting columns into 'columnContainer-->
-</div>
