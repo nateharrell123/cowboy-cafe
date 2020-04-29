@@ -11,24 +11,24 @@
     <!--Search box-->
     <div id="search">
         <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
-        <input type="submit" value="Search"/>
+        <input type="submit" value="Search" />
     </div>
     <!--Search filters-->
     <div id="filters">
         <!--Entree List-->
         <label>
             Entrees
-            <input type="checkbox" name="Options" value="Entrees" checked="@Model.Options.Contains("Entrees")"/>
+            <input type="checkbox" name="Options" value="Entrees" checked="@Model.Options.Contains("Entrees")" />
         </label>
         <!--Sides List-->
         <label>
             Sides
-            <input type="checkbox" name="Options" value="Sides" checked="@Model.Options.Contains("Sides")"/>
+            <input type="checkbox" name="Options" value="Sides" checked="@Model.Options.Contains("Sides")" />
         </label>
         <!--Drinks list-->
         <label>
             Drinks
-            <input type="checkbox" name="Options" value="Drinks" checked="@Model.Options.Contains("Drinks")"/>
+            <input type="checkbox" name="Options" value="Drinks" checked="@Model.Options.Contains("Drinks")" />
         </label>
     </div>
     <div>
@@ -36,6 +36,13 @@
         <input name="MinCalories" type="number" min="0" max="1000" step="0.1" value="@Model.minCalories" placeholder="min" />
         and
         <input name="MaxCalories" type="number" min="0" max="1000" step="0.1" value="@Model.maxCalories" placeholder="max" />
+    </div>
+
+    <div>
+        <b>Price:</b> Between
+        <input name="MinPrice" type="number" min="0" max="1000" step="0.01" value="@Model.minPrice" placeholder="min" />
+        and
+        <input name="MaxPrice" type="number" min="0" max="1000" step="0.01" value="@Model.maxPrice" placeholder="max" />
     </div>
 
     <!--Entrees-->

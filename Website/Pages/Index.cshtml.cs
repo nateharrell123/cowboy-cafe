@@ -31,22 +31,31 @@ namespace Website.Pages
 
         public int? maxCalories { get; set; }
 
+        public double? minPrice { get; set; }
+
+        public double? maxPrice { get; set; }
+
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
-        public void OnGet(int? minCalories, int? maxCalories)
+        public void OnGet(int? minCalories, int? maxCalories, double? minPrice, double? maxPrice)
         {
             this.minCalories = minCalories;
             this.maxCalories = maxCalories;
+            this.minPrice = minPrice;
+            this.maxPrice = maxPrice;
+
             MenuItems = Menu.All;
             SearchTerms = Request.Query["SearchTerms"]; // run Query on user input
             Options = Request.Query["Options"];
+
             MenuItems = Menu.Search(SearchTerms);
             MenuItems = Menu.FilterByCategory(MenuItems, Options);
             MenuItems = Menu.FilterByCalories(MenuItems, minCalories, maxCalories);
+            MenuItems = Menu.FilterByPrice(MenuItems, minPrice, maxPrice);
         }
     }
 }

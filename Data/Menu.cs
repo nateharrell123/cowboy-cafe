@@ -230,6 +230,48 @@ namespace CowboyCafe.Data
             }
             return results;
         }
-        
+
+        /// <summary>
+        /// Filtering results by calories.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> menuItems, double? min, double? max)
+        {
+            if (min == null && max == null) return menuItems;
+            var results = new List<IOrderItem>();
+
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (IOrderItem item in menuItems)
+                {
+                    if (item.Price <= max) results.Add(item);
+                }
+                return results;
+            }
+            // only a minimum specified 
+            if (max == null)
+            {
+                foreach (IOrderItem item in menuItems)
+                {
+                    if (item.Price >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (IOrderItem item in menuItems)
+            {
+                if (item.Price >= min && item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
     }
 }
