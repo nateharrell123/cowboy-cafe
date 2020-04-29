@@ -154,8 +154,8 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Filtering search results by selected category.
         /// </summary>
-        /// <param name="order"></param>
-        /// <param name="filter"></param>
+        /// <param name="order">All of the items on the menu</param>
+        /// <param name="filter">Entree, Drinks, or Sides</param>
         /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> order, IEnumerable<string> filter)
         {
@@ -165,9 +165,26 @@ namespace CowboyCafe.Data
 
             foreach(var item in order)
             {
-                if(order.ToString() != null && order.ToString().Contains(filter.ToString()))
+                if (item.ToString().Equals("Entrees"))
                 {
-                    items.Add(item);
+                    foreach(Entree entree in Entrees())
+                    {
+                        items.Add(entree);
+                    }
+                }
+                if (item.ToString().Equals("Sides"))
+                {
+                    foreach(Side sides in Sides())
+                    {
+                        items.Add(sides);
+                    }
+                }
+                if (item.ToString().Equals("Drinks"))
+                {
+                    foreach(Drink drinks in Drinks())
+                    {
+                        items.Add(drinks);
+                    }
                 }
             }
             return items;

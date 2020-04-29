@@ -26,6 +26,9 @@ namespace Website.Pages
         [BindProperty]
         public IEnumerable<IOrderItem> MenuItems { get; protected set; }
 
+        [BindProperty]
+        public string[] Options { get; set; } // all the options they've selected are stored here (checkboxes)
+
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -35,9 +38,11 @@ namespace Website.Pages
         public void OnGet()
         {
             MenuItems = Menu.All;
-            SearchTerms = Request.Query["SearchTerms"]; // run Query on property?
+            SearchTerms = Request.Query["SearchTerms"]; // run Query on user input
+            Options = Request.Query["Options"];
             EntreeSearch = Request.Query["EntreeSearch"];
             MenuItems = Menu.Search(SearchTerms);
+            MenuItems = Menu.FilterByCategory(MenuItems, Options);
         }
     }
 }

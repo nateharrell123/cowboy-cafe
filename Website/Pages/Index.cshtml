@@ -10,26 +10,25 @@
 <form id="menu-search">
     <!--Search box-->
     <div id="search">
-        <input type="text" name="SearchInput" value="@Model.SearchTerms" />
-        <input type="submit" value="Search" />
+        <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+        <input type="submit" value="Search"/>
     </div>
     <!--Search filters-->
     <div id="filters">
         <!--Entree List-->
         <label>
             Entrees
-            <input type="checkbox" name="EntreesBox" />
-
+            <input type="checkbox" name="Options" value="Entree" checked="@Model.Options.Contains("Entrees")"/>
         </label>
         <!--Sides List-->
         <label>
             Sides
-            <input type="checkbox" name="SidesBox" />
+            <input type="checkbox" name="Options" value="Sides" checked="@Model.Options.Contains("Sides")"/>
         </label>
         <!--Drinks list-->
         <label>
             Drinks
-            <input type="checkbox" name="DrinksBox"
+            <input type="checkbox" name="Options" value="Drinks" checked="@Model.Options.Contains("Drinks")"/>
         </label>
     </div>
     <div>
