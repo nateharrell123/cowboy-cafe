@@ -24,7 +24,7 @@ namespace Website.Pages
         public IEnumerable<IOrderItem> MenuItems { get; protected set; }
 
         [BindProperty]
-        public string[] Options { get; set; } = new string[0];
+        public string[] Options { get; set; } 
         // all the options they've selected are stored here (checkboxes)
 
         private readonly ILogger<IndexModel> _logger;

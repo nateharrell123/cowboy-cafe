@@ -159,31 +159,30 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> order, IEnumerable<string> filter)
         {
-            if (filter == null || filter.Count() == 0) return null;
-
             List<IOrderItem> items = new List<IOrderItem>();
 
+            if (filter == null || filter.Count() == 0) return order;
             foreach(var item in filter)
             {
                 if (item.ToString().Equals("Entrees"))
                 {
-                    foreach(Entree entree in order)
+                    foreach(IOrderItem it in order)
                     {
-                        items.Add(entree);
+                        if (it is Entree entree) items.Add(entree);
                     }
                 }
                 if (item.ToString().Equals("Sides"))
                 {
-                    foreach(Side sides in order)
+                    foreach(IOrderItem it in order)
                     {
-                        items.Add(sides);
+                        if (it is Side side) items.Add(side);
                     }
                 }
                 if (item.ToString().Equals("Drinks"))
                 {
-                    foreach(Drink drinks in order)
+                    foreach(IOrderItem it in order)
                     {
-                        items.Add(drinks);
+                        if (it is Drink drinks) items.Add(drinks);
                     }
                 }
             }
