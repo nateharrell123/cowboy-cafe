@@ -196,15 +196,15 @@ namespace CowboyCafe.Data
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <returns></returns>
-        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> calories, int? min, int? max)
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> menuItems, int? min, int? max)
         {
-            if (min == null && max == null) return calories;
+            if (min == null && max == null) return menuItems;
             var results = new List<IOrderItem>();
 
             // only a maximum specified
             if (min == null)
             {
-                foreach (Entree item in calories)
+                foreach (IOrderItem item in menuItems)
                 {
                     if (item.Calories <= max) results.Add(item);
                 }
@@ -213,7 +213,7 @@ namespace CowboyCafe.Data
             // only a minimum specified 
             if (max == null)
             {
-                foreach (Entree item in calories)
+                foreach (IOrderItem item in menuItems)
                 {
                     if (item.Calories >= min) results.Add(item);
                 }
@@ -221,7 +221,7 @@ namespace CowboyCafe.Data
             }
 
             // Both minimum and maximum specified
-            foreach (Entree item in calories)
+            foreach (IOrderItem item in menuItems)
             {
                 if (item.Calories >= min && item.Calories <= max)
                 {

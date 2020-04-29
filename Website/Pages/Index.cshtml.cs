@@ -27,19 +27,26 @@ namespace Website.Pages
         public string[] Options { get; set; } 
         // all the options they've selected are stored here (checkboxes)
 
+        public int? minCalories { get; set; }
+
+        public int? maxCalories { get; set; }
+
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
-        public void OnGet()
+        public void OnGet(int? minCalories, int? maxCalories)
         {
+            this.minCalories = minCalories;
+            this.maxCalories = maxCalories;
             MenuItems = Menu.All;
             SearchTerms = Request.Query["SearchTerms"]; // run Query on user input
             Options = Request.Query["Options"];
             MenuItems = Menu.Search(SearchTerms);
             MenuItems = Menu.FilterByCategory(MenuItems, Options);
+            MenuItems = Menu.FilterByCalories(MenuItems, minCalories, maxCalories);
         }
     }
 }
