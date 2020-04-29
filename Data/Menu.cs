@@ -54,6 +54,7 @@ namespace CowboyCafe.Data
         {
             List<IOrderItem> drinks = new List<IOrderItem>()
             {
+                new CowboyCoffee(),
                 new JerkedSoda(),
                 new TexasTea(),
                 new Water()
@@ -69,7 +70,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public static IEnumerable<IOrderItem> CompleteMenu()
         {
-            List<object> menu = new List<object>()
+            List<IOrderItem> menu = new List<IOrderItem>()
             {
                 new AngryChicken(),
                 new CowpokeChili(),
@@ -89,7 +90,7 @@ namespace CowboyCafe.Data
                 new Water()
             };
 
-            return menu as IEnumerable<IOrderItem>;
+            return menu;
         }
 
         public static IEnumerable<IOrderItem> All => CompleteMenu();
