@@ -163,25 +163,25 @@ namespace CowboyCafe.Data
 
             List<IOrderItem> items = new List<IOrderItem>();
 
-            foreach(var item in order)
+            foreach(var item in filter)
             {
                 if (item.ToString().Equals("Entrees"))
                 {
-                    foreach(Entree entree in Entrees())
+                    foreach(Entree entree in order)
                     {
                         items.Add(entree);
                     }
                 }
                 if (item.ToString().Equals("Sides"))
                 {
-                    foreach(Side sides in Sides())
+                    foreach(Side sides in order)
                     {
                         items.Add(sides);
                     }
                 }
                 if (item.ToString().Equals("Drinks"))
                 {
-                    foreach(Drink drinks in Drinks())
+                    foreach(Drink drinks in order)
                     {
                         items.Add(drinks);
                     }
