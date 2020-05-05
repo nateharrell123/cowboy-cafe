@@ -1,0 +1,125 @@
+﻿@page
+@model IndexModel
+@using CowboyCafe.Data
+@{
+    ViewData["Title"] = "Home page";
+    // throw new Exception();
+}
+<h1 class="display-4">Cowboy Cafe</h1>
+
+<form id="menu-search">
+    <!--Search box-->
+    <div id="search">
+        <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+        <input type="submit" value="Search" />
+    </div>
+    <!--Search filters-->
+    <div id="filters">
+        <!--Entree List-->
+        <label>
+            Entrees
+            <input type="checkbox" name="Options" value="Entrees" checked="@Model.Options.Contains("Entrees")" />
+        </label>
+        <!--Sides List-->
+        <label>
+            Sides
+            <input type="checkbox" name="Options" value="Sides" checked="@Model.Options.Contains("Sides")" />
+        </label>
+        <!--Drinks list-->
+        <label>
+            Drinks
+            <input type="checkbox" name="Options" value="Drinks" checked="@Model.Options.Contains("Drinks")" />
+        </label>
+    </div>
+    <div>
+        <b>Calories:</b> Between
+        <input name="MinCalories" type="number" min="0" max="1000" step="0.1" value="@Model.minCalories" placeholder="min" />
+        and
+        <input name="MaxCalories" type="number" min="0" max="1000" step="0.1" value="@Model.maxCalories" placeholder="max" />
+    </div>
+
+    <div>
+        <b>Price:</b> Between
+        <input name="MinPrice" type="number" min="0" max="1000" step="0.01" value="@Model.minPrice" placeholder="min" />
+        and
+        <input name="MaxPrice" type="number" min="0" max="1000" step="0.01" value="@Model.maxPrice" placeholder="max" />
+    </div>
+
+    <!--Entrees-->
+    <div class="columnContainer">
+        <div class="column">
+
+            <h2>Entrees</h2>
+            <ul>
+                @foreach (var item in Model.MenuItems)
+                {
+                    @if (item is Entree entree)
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <h3>@entree</h3>
+                                <h5>Price: $@string.Format("{0:#.00}", entree.Price)</h5>
+                                <h5>Calories: @entree.Calories</h5>
+                            </div>
+                        </li>
+                    }
+
+                }
+            </ul>
+        </div>
+
+        <!--Sides-->
+        <div class="column">
+
+            <h2>Sides</h2>
+            <ul>
+                @foreach (IOrderItem item in Model.MenuItems)
+                {
+                    @if (item is Side side)
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <h3>@side.ToString()</h3>
+                                <h4>Calorie: @item.Calories</h4>
+                                <h5>Price $@item.Price</h5>
+                            </div>
+                        </li>
+                    }
+
+                }
+            </ul>
+        </div>
+
+        <!--Drinks-->
+        <div class="column">
+            <h2>Drinks</h2>
+            <ul>
+                @foreach (IOrderItem item in Model.MenuItems)
+                {
+                    @if (item is Drink drink)
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <h3>@drink.ToString()</h3>
+                                <h4>Calories: @drink.Calories</h4>
+                                <h5>Price: $@string.Format("{0:#.00}", drink.Price)</h5>
+                            </div>
+                        </li>
+                    }
+
+                }
+            </ul>
+        </div>
+        <!--Putting columns into 'columnContainer-->
+    </div>
+
+</form>
+
+<div class="text-center">
+    <i>
+        We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+        Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+        Dip your Pan de Campo into a bowl of beans.
+        Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
+    </i>
+</div>
