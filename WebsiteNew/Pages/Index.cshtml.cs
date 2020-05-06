@@ -43,7 +43,7 @@ namespace WebsiteNew.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-        }
+        } 
         public void OnGet(int? minCalories, int? maxCalories, double? minPrice, double? maxPrice)
         {
             this.minCalories = minCalories;
