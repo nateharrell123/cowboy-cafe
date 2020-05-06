@@ -54,11 +54,22 @@ namespace WebsiteNew.Pages
             MenuItems = Menu.All;
             SearchTerms = Request.Query["SearchTerms"]; // run Query on user input
             Options = Request.Query["Options"];
+            
+            // Calories:
+            /*
+            if(SearchTerms != null)
+            {
+                MenuItems = MenuItems.Where(item =>
+                item.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
+            }
+            */
 
+            
             MenuItems = Menu.Search(SearchTerms);
             MenuItems = Menu.FilterByCategory(MenuItems, Options);
             MenuItems = Menu.FilterByCalories(MenuItems, minCalories, maxCalories);
             MenuItems = Menu.FilterByPrice(MenuItems, minPrice, maxPrice);
+            
         }
     }
 }
