@@ -63,7 +63,6 @@
                             </div>
                         </li>
                     }
-
                 }
             </ul>
         </div>
@@ -85,7 +84,6 @@
                             </div>
                         </li>
                     }
-
                 }
             </ul>
         </div>
@@ -93,6 +91,7 @@
         <!--Drinks-->
         <div class="column">
             <h2>Drinks</h2>
+
             <ul>
                 @foreach (IOrderItem item in Model.MenuItems)
                 {
@@ -111,6 +110,10 @@
             </ul>
         </div>
         <!--Putting columns into 'columnContainer-->
+        <div class="column">
+            <h2>Soda Flavors:</h2>
+            <h4>Cream Soda, Sarsparilla, Birch Beer, Root Beer, Orange Soda</h4>
+        </div>
     </div>
 
 </form>

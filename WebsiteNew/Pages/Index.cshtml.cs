@@ -24,6 +24,9 @@ namespace WebsiteNew.Pages
         public IEnumerable<IOrderItem> MenuItems { get; protected set; }
 
         [BindProperty]
+        public IEnumerable<SodaFlavor> SodaFlavors { get; set; }
+
+        [BindProperty]
         public string[] Options { get; set; }
         // all the options they've selected are stored here (checkboxes)
 
